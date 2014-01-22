@@ -7,8 +7,8 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 ## Projeto de Paradigmas de Linguagens de Programação
 
 ### Altere a linguagem para incluir:
-1. A expressão de divisão de inteiros (/)
-2. A expressão de exponenciação de inteiros (^)
+1. A expressão de divisão de inteiros (`/`)
+2. A expressão de exponenciação de inteiros (`^`)
 3. A expressão `ou` entre booleanos
 4. A expressão `xor` entre booleanos
 5. A relação maior ou igual (`>=`)
