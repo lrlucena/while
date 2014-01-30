@@ -13,12 +13,12 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 4. A expressão `xor` entre booleanos
 5. A relação maior ou igual (`>=`)
 6. A relação diferente (`<>`)
-5. O comando `para ID de expressão até expressão faça comando`. Exemplo
+5. O comando `para ID de expressao ate expressao faca comando`. Exemplo
 <pre>
     para i de 1 até 5 faça
       escreva i
 </pre>
-6. A alteração do comando `se .. então .. senão ...` para incluir a cláusula `senãose`. Exemplo:
+6. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula `senaose`. Exemplo:
 <pre>
     se nota > 6 entao
       exiba "Aprovado"
