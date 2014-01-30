@@ -18,14 +18,14 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
     para i de 1 até 5 faça
       escreva i
 </pre>
-6. A alteração do comando se .. então .. senão ... para incluir a cláusula senãose. Exemplo:
+6. A alteração do comando `se .. então .. senão ...` para incluir a cláusula `senãose`. Exemplo:
 <pre>
-    se nota> 6 entao
-      exiba “Aprovado”
-    senaose nota>3 entao
-      exiba “Recuperação”
+    se nota > 6 entao
+      exiba "Aprovado"
+    senaose nota > 3 entao
+      exiba "Recuperação"
     senão
-      exiba “Reprovado”
+      exiba "Reprovado"
 </pre>
 
 ### Escreva um artigo (com até 10 páginas) para descrever as alterações realizadas na linguagem. O artigo deve abordar:
