@@ -15,7 +15,7 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 6. A relação diferente (`<>`)
 5. O comando `para ID de expressao ate expressao faca comando`. Exemplo
 <pre>
-    para i de 1 até 5 faça
+    para i de 1 ate 5 faca
       escreva i
 </pre>
 6. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula `senaose`. Exemplo:
