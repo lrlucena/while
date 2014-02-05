@@ -20,8 +20,7 @@ se d<=0 ou 20<=d entao
   exiba "'ou' erro"
 senao skip;
 
-f := verdadeiro xor falso;
-se nao f entao
+se nao (verdadeiro xor falso) entao
   exiba "'xor' erro"
 senao skip;
 
