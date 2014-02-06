@@ -18,13 +18,13 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
     para i de 1 ate 5 faca
       escreva i
 </pre>
-6. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula `senaose`. Exemplo:
+6. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Exemplo:
 <pre>
     se nota > 6 entao
       exiba "Aprovado"
     senaose nota > 3 entao
       exiba "Recuperação"
-    senão
+    senao
       exiba "Reprovado"
 </pre>
 
