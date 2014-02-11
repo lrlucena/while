@@ -1,6 +1,6 @@
 # Enquanto.g4
 
-## Rules
+## Regras
 
 1. programa
 2. seqComando
@@ -17,7 +17,7 @@
 
 #### Text notation:
 
-programa : seqComando ;
+`programa : seqComando ;`
 
 #### Visual notation:
 ![](images/programa.png)
@@ -27,7 +27,7 @@ programa : seqComando ;
 
 #### Text notation:
 
-seqComando : comando (';' comando)\* ;
+`seqComando : comando (';' comando)\* ;`
 
 #### Visual notation:
 ![](images/seqComando.png)
@@ -37,7 +37,7 @@ seqComando : comando (';' comando)\* ;
 
 #### Text notation:
 
-comando : ID ':=' expressao # atribuicao | 'skip' # skip | 'se' bool 'entao' comando 'senao' comando # se | 'enquanto' bool 'faca' comando # enquanto | 'exiba' Texto # exiba | 'escreva' expressao # escreva | '{' seqComando '}' # bloco ;
+`comando : ID ':=' expressao # atribuicao | 'skip' # skip | 'se' bool 'entao' comando 'senao' comando # se | 'enquanto' bool 'faca' comando # enquanto | 'exiba' Texto # exiba | 'escreva' expressao # escreva | '{' seqComando '}' # bloco ;`
 
 #### Visual notation:
 ![](images/comando.png)
@@ -47,7 +47,7 @@ comando : ID ':=' expressao # atribuicao | 'skip' # skip | 'se' bool 'entao' com
 
 #### Text notation:
 
-expressao : INT # inteiro | 'leia' # leia | ID # id | expressao '\*' expressao # opBin | expressao '+' expressao # opBin | expressao '-' expressao # opBin | '(' expressao ')' # expPar ;
+`expressao : INT # inteiro | 'leia' # leia | ID # id | expressao '\*' expressao # opBin | expressao '+' expressao # opBin | expressao '-' expressao # opBin | '(' expressao ')' # expPar ;`
 
 #### Visual notation:
 ![](images/expressao.png)
@@ -57,7 +57,7 @@ expressao : INT # inteiro | 'leia' # leia | ID # id | expressao '\*' expressao #
 
 #### Text notation:
 
-bool : ('verdadeiro'|'falso') # booleano | expressao '=' expressao # opRel | expressao ' expressao # opRel | 'nao' bool # naoLogico | bool 'e' bool # eLogico | '(' bool ')' # boolPar ;
+`bool : ('verdadeiro'|'falso') # booleano | expressao '=' expressao # opRel | expressao ' expressao # opRel | 'nao' bool # naoLogico | bool 'e' bool # eLogico | '(' bool ')' # boolPar ;`
 
 #### Visual notation:
 ![](images/bool.png)
@@ -67,7 +67,7 @@ bool : ('verdadeiro'|'falso') # booleano | expressao '=' expressao # opRel | exp
 
 #### Text notation:
 
-INT : ('0'..'9')+ ;
+`INT : ('0'..'9')+ ;`
 
 #### Visual notation:
 ![](images/INT.png)
@@ -77,7 +77,7 @@ INT : ('0'..'9')+ ;
 
 #### Text notation:
 
-ID : ('a'..'z')+ ;
+`ID : ('a'..'z')+ ;`
 
 #### Visual notation:
 ![](images/ID.png)
@@ -87,7 +87,7 @@ ID : ('a'..'z')+ ;
 
 #### Text notation:
 
-Texto : '"' .\*? '"' ;
+`Texto : '"' .\*? '"' ;`
 
 #### Visual notation:
 ![](images/Texto.png)
@@ -97,7 +97,7 @@ Texto : '"' .\*? '"' ;
 
 #### Text notation:
 
-Espaco : [ \t\n\r] -> Skip ;
+`Espaco : [ \t\n\r] -> Skip ;`
 
 #### Visual notation:
 ![](images/Espaco.png)
