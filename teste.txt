@@ -1,0 +1,49 @@
+a := 10 / 2;
+
+se a<>5 entao 
+  exiba "'/' erro"
+senao skip;
+
+
+b := 3^2;
+se b<>9 entao 
+  exiba "'^' erro 1"
+senao skip;
+
+c := 2^3^2;
+se c=128 entao skip 
+senao 
+  exiba "'^' erro 2";
+
+d := 5;
+se d<=0 ou 20<=d entao
+  exiba "'ou' erro"
+senao skip;
+
+se nao (verdadeiro xor falso) entao
+  exiba "'xor' erro"
+senao skip;
+
+se 4>=5 entao
+  exiba "'>=' erro"
+senao skip;
+
+se 3<>3 entao
+  exiba "'<>' erro"
+senao skip;
+
+s:=0;
+para x de 1 ate 5 faca
+  s := s + x
+fim
+se s<>15 entao
+  exiba "'para' erro"
+senao skip;
+
+nota := 5;
+se nota > 6 entao
+  exiba "Aprovado"
+senaose nota > 3 entao
+  exiba "Recuperação"
+senao
+  exiba "Reprovado
