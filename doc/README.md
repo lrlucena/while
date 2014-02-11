@@ -1,5 +1,4 @@
-Enquanto.g4
-# [Enquanto](Enquanto.g4.html)
+# Enquanto.g4
 
 ## Rules
 
@@ -14,7 +13,7 @@ Enquanto.g4
 9. Espaco
 
 -
-### programa [Top](Enquanto.g4.html "Go to top")
+### programa
 
 #### Text notation:
 
@@ -24,7 +23,7 @@ programa : seqComando ;
 ![](images/programa.png)
 
 -
-### seqComando [Top](Enquanto.g4.html "Go to top")
+### seqComando
 
 #### Text notation:
 
@@ -34,7 +33,7 @@ seqComando : comando (';' comando)\* ;
 ![](images/seqComando.png)
 
 -
-### comando [Top](Enquanto.g4.html "Go to top")
+### comando
 
 #### Text notation:
 
@@ -44,7 +43,7 @@ comando : ID ':=' expressao # atribuicao | 'skip' # skip | 'se' bool 'entao' com
 ![](images/comando.png)
 
 -
-### expressao [Top](Enquanto.g4.html "Go to top")
+### expressao
 
 #### Text notation:
 
@@ -54,7 +53,7 @@ expressao : INT # inteiro | 'leia' # leia | ID # id | expressao '\*' expressao #
 ![](images/expressao.png)
 
 -
-### bool [Top](Enquanto.g4.html "Go to top")
+### bool
 
 #### Text notation:
 
@@ -64,7 +63,7 @@ bool : ('verdadeiro'|'falso') # booleano | expressao '=' expressao # opRel | exp
 ![](images/bool.png)
 
 -
-### INT [Top](Enquanto.g4.html "Go to top")
+### INT
 
 #### Text notation:
 
@@ -74,7 +73,7 @@ INT : ('0'..'9')+ ;
 ![](images/INT.png)
 
 -
-### ID [Top](Enquanto.g4.html "Go to top")
+### ID
 
 #### Text notation:
 
@@ -84,7 +83,7 @@ ID : ('a'..'z')+ ;
 ![](images/ID.png)
 
 -
-### Texto [Top](Enquanto.g4.html "Go to top")
+### Texto
 
 #### Text notation:
 
@@ -94,7 +93,7 @@ Texto : '"' .\*? '"' ;
 ![](images/Texto.png)
 
 -
-### Espaco [Top](Enquanto.g4.html "Go to top")
+### Espaco
 
 #### Text notation:
 
