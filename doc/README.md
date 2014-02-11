@@ -37,7 +37,14 @@
 
 #### Text notation:
 
-`comando : ID ':=' expressao # atribuicao | 'skip' # skip | 'se' bool 'entao' comando 'senao' comando # se | 'enquanto' bool 'faca' comando # enquanto | 'exiba' Texto # exiba | 'escreva' expressao # escreva | '{' seqComando '}' # bloco ;`
+`comando : `
+`    ID ':=' expressao # atribuicao`
+`  | 'skip' # skip`
+`  | 'se' bool 'entao' comando 'senao' comando # se`
+`  | 'enquanto' bool 'faca' comando # enquanto`
+`  | 'exiba' Texto # exiba`
+`  | 'escreva' expressao # escreva`
+`  | '{' seqComando '}' # bloco ;`
 
 #### Visual notation:
 ![](images/comando.png)
