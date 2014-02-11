@@ -17,7 +17,9 @@
 
 #### Text notation:
 
-<pre>programa : seqComando ;</pre>
+```antlr
+programa : seqComando ;
+```
 
 #### Visual notation:
 ![](images/programa.png)
@@ -27,7 +29,9 @@
 
 #### Text notation:
 
-<pre>seqComando : comando (';' comando)\* ;</pre>
+```antlr
+seqComando : comando (';' comando)* ;
+```
 
 #### Visual notation:
 ![](images/seqComando.png)
@@ -61,7 +65,7 @@ expressao :
     INT                      # inteiro
   | 'leia'                   # leia 
   | ID                       # id 
-  | expressao '\*' expressao # opBin 
+  | expressao '*' expressao  # opBin 
   | expressao '+' expressao  # opBin 
   | expressao '-' expressao  # opBin 
   | '(' expressao ')'        # expPar ;
@@ -77,12 +81,12 @@ expressao :
 
 ```antlr
 bool :
-     ('verdadeiro'|'falso')  # booleano 
-   | expressao '=' expressao # opRel 
-   | expressao ' expressao   # opRel 
-   | 'nao' bool              # naoLogico 
-   | bool 'e' bool           # eLogico 
-   | '(' bool ')'            # boolPar ;
+     ('verdadeiro'|'falso')     # booleano 
+   | expressao '=' expressao    # opRel 
+   | expressao '<=' expressao   # opRel 
+   | 'nao' bool                 # naoLogico 
+   | bool 'e' bool              # eLogico 
+   | '(' bool ')'               # boolPar ;
 ```
 
 #### Visual notation:
@@ -118,7 +122,7 @@ ID : ('a'..'z')+ ;
 #### Text notation:
 
 ```antlr
-Texto : '"' .\*? '"' ;
+Texto : '"' .*? '"' ;
 ```
 
 #### Visual notation:
