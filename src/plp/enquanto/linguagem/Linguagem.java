@@ -33,11 +33,9 @@ public interface Linguagem {
 
 	class Programa {
 		private List<Comando> comandos;
-
 		public Programa(List<Comando> comandos) {
 			this.comandos = comandos;
 		}
-
 		public void execute() {
 			for (Comando comando : comandos) {
 				comando.execute();
@@ -65,6 +63,7 @@ public interface Linguagem {
 		}
 	}
 
+	Skip skip = new Skip();
 	class Skip implements Comando {
 		@Override
 		public void execute() {
@@ -177,6 +176,7 @@ public interface Linguagem {
 		}
 	}
 
+	Leia leia = new Leia();
 	class Leia implements Expressao {
 		@Override
 		public int getValor() {
@@ -205,7 +205,7 @@ public interface Linguagem {
 			return esq.getValor() - dir.getValor();
 		}
 	}
-
+	
 	class ExpMult extends ExpBin {
 		public ExpMult(Expressao esq, Expressao dir) {
 			super(esq, dir);
