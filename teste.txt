@@ -11,7 +11,7 @@ se b<>9 entao
 senao skip;
 
 c := 2^3^2;
-se c=128 entao skip 
+se c=512 entao skip 
 senao 
   exiba "'^' erro 2";
 
