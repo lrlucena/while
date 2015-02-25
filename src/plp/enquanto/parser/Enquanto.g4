@@ -1,6 +1,6 @@
 grammar Enquanto;
 
-programa : seqComando;     // sequência de comandos
+programa : seqComando;     // sequÃªncia de comandos
 
 seqComando: comando (';' comando)* ;
 
@@ -34,4 +34,4 @@ INT: ('0'..'9')+ ;
 ID: ('a'..'z')+;
 Texto: '"' .*? '"';
 
-Espaco: [ \t\n\r] -> Skip;
+Espaco: [ \t\n\r] -> skip;
