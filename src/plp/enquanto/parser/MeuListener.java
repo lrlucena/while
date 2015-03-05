@@ -30,7 +30,7 @@ public class MeuListener extends EnquantoBaseListener {
 
 	@Override
 	public void exitBooleano(@NotNull EnquantoParser.BooleanoContext ctx) {
-		setValue(ctx, new Booleano(ctx.getText() == "verdadeiro"));
+		setValue(ctx, new Booleano(ctx.getText().equals("verdadeiro")));
 	}
 
 	@Override
