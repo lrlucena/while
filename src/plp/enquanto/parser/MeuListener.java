@@ -112,7 +112,7 @@ public class MeuListener extends EnquantoBaseListener {
 			exp = new ExpMult(esq, dir);
 			break;
 		case "-":
-			exp = new ExpMult(esq, dir);
+			exp = new ExpSub(esq, dir);
 			break;
 		default:
 			exp = new ExpSoma(esq, dir);
