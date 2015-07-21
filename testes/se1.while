@@ -1,4 +1,4 @@
-nota = leia
+nota := leia
 se nota>=6 entao
   exiba "Aprovado"
 senaose nota >= 2 entao
