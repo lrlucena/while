@@ -1,4 +1,5 @@
-n = leia mod 5
+n := leia
+n = n - n / 5 * 5
 se n=0 então exiba "zero"
 senaose n = 1 entao exiba "um"
 senaose n = 2 entao exiba "dois"
