@@ -1,0 +1,6 @@
+n = leia mod 5
+se n=0 então exiba "zero"
+senaose n = 1 entao exiba "um"
+senaose n = 2 entao exiba "dois"
+senaose n = 3 entao exiba "tres"
+senao               exiba "quatro
