@@ -1,0 +1,4 @@
+n = 5
+para i de 1 ate n faca
+  escreva i
+  n = n * 2 mod 17
