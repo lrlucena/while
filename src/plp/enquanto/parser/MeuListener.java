@@ -3,16 +3,15 @@ package plp.enquanto.parser;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
 import plp.enquanto.linguagem.Linguagem.*;
 
 public class MeuListener extends EnquantoBaseListener {
-	private Leia leia = new Leia();
-	private Skip skip = new Skip();
-	private ParseTreeProperty<Object> values = new ParseTreeProperty<>();
+	private final Leia leia = new Leia();
+	private final Skip skip = new Skip();
+	private final ParseTreeProperty<Object> values = new ParseTreeProperty<>();
 
 	private Programa programa;
 
@@ -20,64 +19,64 @@ public class MeuListener extends EnquantoBaseListener {
 		return programa;
 	}
 
-	private void setValue(ParseTree node, Object value) {
+	private void setValue(final ParseTree node, final Object value) {
 		values.put(node, value);
 	}
 
-	private Object getValue(ParseTree node) {
+	private Object getValue(final ParseTree node) {
 		return values.get(node);
 	}
 
 	@Override
-	public void exitBooleano(@NotNull EnquantoParser.BooleanoContext ctx) {
+	public void exitBooleano(final EnquantoParser.BooleanoContext ctx) {
 		setValue(ctx, new Booleano(ctx.getText().equals("verdadeiro")));
 	}
 
 	@Override
-	public void exitLeia(@NotNull EnquantoParser.LeiaContext ctx) {
+	public void exitLeia(final EnquantoParser.LeiaContext ctx) {
 		setValue(ctx, leia);
 	}
 
 	@Override
-	public void exitSe(@NotNull EnquantoParser.SeContext ctx) {
-		Bool condicao = (Bool) getValue(ctx.bool());
-		Comando entao = (Comando) getValue(ctx.comando(0));
-		Comando senao = (Comando) getValue(ctx.comando(1));
+	public void exitSe(final EnquantoParser.SeContext ctx) {
+		final Bool condicao = (Bool) getValue(ctx.bool());
+		final Comando entao = (Comando) getValue(ctx.comando(0));
+		final Comando senao = (Comando) getValue(ctx.comando(1));
 		setValue(ctx, new Se(condicao, entao, senao));
 	}
 
 	@Override
-	public void exitInteiro(@NotNull EnquantoParser.InteiroContext ctx) {
+	public void exitInteiro(final EnquantoParser.InteiroContext ctx) {
 		setValue(ctx, new Inteiro(Integer.parseInt(ctx.getText())));
 	}
 
 	@Override
-	public void exitSkip(@NotNull EnquantoParser.SkipContext ctx) {
+	public void exitSkip(final EnquantoParser.SkipContext ctx) {
 		setValue(ctx, skip);
 	}
 
 	@Override
-	public void exitEscreva(@NotNull EnquantoParser.EscrevaContext ctx) {
-		Expressao exp = (Expressao) getValue(ctx.expressao());
+	public void exitEscreva(final EnquantoParser.EscrevaContext ctx) {
+		final Expressao exp = (Expressao) getValue(ctx.expressao());
 		setValue(ctx, new Escreva(exp));
 	}
 
 	@Override
-	public void exitPrograma(@NotNull EnquantoParser.ProgramaContext ctx) {
+	public void exitPrograma(final EnquantoParser.ProgramaContext ctx) {
 		@SuppressWarnings("unchecked")
-		List<Comando> cmds = (List<Comando>) getValue(ctx.seqComando());
+		final List<Comando> cmds = (List<Comando>) getValue(ctx.seqComando());
 		programa = new Programa(cmds);
 		setValue(ctx, programa);
 	}
 
 	@Override
-	public void exitId(@NotNull EnquantoParser.IdContext ctx) {
+	public void exitId(final EnquantoParser.IdContext ctx) {
 		setValue(ctx, new Id(ctx.ID().getText()));
 	}
 
 	@Override
-	public void exitSeqComando(@NotNull EnquantoParser.SeqComandoContext ctx) {
-		List<Comando> comandos = new ArrayList<>();
+	public void exitSeqComando(final EnquantoParser.SeqComandoContext ctx) {
+		final List<Comando> comandos = new ArrayList<>();
 		for (EnquantoParser.ComandoContext c : ctx.comando()) {
 			comandos.add((Comando) getValue(c));
 		}
@@ -85,24 +84,24 @@ public class MeuListener extends EnquantoBaseListener {
 	}
 
 	@Override
-	public void exitAtribuicao(@NotNull EnquantoParser.AtribuicaoContext ctx) {
-		String id = ctx.ID().getText();
-		Expressao exp = (Expressao) getValue(ctx.expressao());
+	public void exitAtribuicao(final EnquantoParser.AtribuicaoContext ctx) {
+		final String id = ctx.ID().getText();
+		final Expressao exp = (Expressao) getValue(ctx.expressao());
 		setValue(ctx, new Atribuicao(id, exp));
 	}
 
 	@Override
-	public void exitBloco(@NotNull EnquantoParser.BlocoContext ctx) {
+	public void exitBloco(final EnquantoParser.BlocoContext ctx) {
 		@SuppressWarnings("unchecked")
-		List<Comando> cmds = (List<Comando>) getValue(ctx.seqComando());
+		final List<Comando> cmds = (List<Comando>) getValue(ctx.seqComando());
 		setValue(ctx, new Bloco(cmds));
 	}
 
 	@Override
-	public void exitOpBin(@NotNull EnquantoParser.OpBinContext ctx) {
-		Expressao esq = (Expressao) getValue(ctx.expressao(0));
-		Expressao dir = (Expressao) getValue(ctx.expressao(1));
-		String op = ctx.getChild(1).getText();
+	public void exitOpBin(final EnquantoParser.OpBinContext ctx) {
+		final Expressao esq = (Expressao) getValue(ctx.expressao(0));
+		final Expressao dir = (Expressao) getValue(ctx.expressao(1));
+		final String op = ctx.getChild(1).getText();
 		final ExpBin exp;
 		switch (op) {
 		case "+":
@@ -121,47 +120,47 @@ public class MeuListener extends EnquantoBaseListener {
 	}
 
 	@Override
-	public void exitEnquanto(@NotNull EnquantoParser.EnquantoContext ctx) {
-		Bool condicao = (Bool) getValue(ctx.bool());
-		Comando comando = (Comando) getValue(ctx.comando());
+	public void exitEnquanto(final EnquantoParser.EnquantoContext ctx) {
+		final Bool condicao = (Bool) getValue(ctx.bool());
+		final Comando comando = (Comando) getValue(ctx.comando());
 		setValue(ctx, new Enquanto(condicao, comando));
 	}
 
 	@Override
-	public void exitELogico(@NotNull EnquantoParser.ELogicoContext ctx) {
-		Bool esq = (Bool) getValue(ctx.bool(0));
-		Bool dir = (Bool) getValue(ctx.bool(1));
+	public void exitELogico(final EnquantoParser.ELogicoContext ctx) {
+		final Bool esq = (Bool) getValue(ctx.bool(0));
+		final Bool dir = (Bool) getValue(ctx.bool(1));
 		setValue(ctx, new ELogico(esq, dir));
 	}
 
 	@Override
-	public void exitBoolPar(@NotNull EnquantoParser.BoolParContext ctx) {
+	public void exitBoolPar(final EnquantoParser.BoolParContext ctx) {
 		setValue(ctx, getValue(ctx.bool()));
 	}
 
 	@Override
-	public void exitNaoLogico(@NotNull EnquantoParser.NaoLogicoContext ctx) {
-		Bool b = (Bool) getValue(ctx.bool());
+	public void exitNaoLogico(final EnquantoParser.NaoLogicoContext ctx) {
+		final Bool b = (Bool) getValue(ctx.bool());
 		setValue(ctx, new NaoLogico(b));
 	}
 
 	@Override
-	public void exitExpPar(@NotNull EnquantoParser.ExpParContext ctx) {
+	public void exitExpPar(final EnquantoParser.ExpParContext ctx) {
 		setValue(ctx, getValue(ctx.expressao()));
 	}
 
 	@Override
-	public void exitExiba(@NotNull EnquantoParser.ExibaContext ctx) {
-		String t = ctx.Texto().getText();
-		String texto = t.substring(1, t.length() - 1);
+	public void exitExiba(final EnquantoParser.ExibaContext ctx) {
+		final String t = ctx.Texto().getText();
+		final String texto = t.substring(1, t.length() - 1);
 		setValue(ctx, new Exiba(texto));
 	}
 
 	@Override
-	public void exitOpRel(@NotNull EnquantoParser.OpRelContext ctx) {
-		Expressao esq = (Expressao) getValue(ctx.expressao(0));
-		Expressao dir = (Expressao) getValue(ctx.expressao(1));
-		String op = ctx.getChild(1).getText();
+	public void exitOpRel(final EnquantoParser.OpRelContext ctx) {
+		final Expressao esq = (Expressao) getValue(ctx.expressao(0));
+		final Expressao dir = (Expressao) getValue(ctx.expressao(1));
+		final String op = ctx.getChild(1).getText();
 		final ExpRel exp;
 		switch (op) {
 		case "=":
