@@ -3,6 +3,7 @@ While
 
 Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagens de Programação
 
+> Implementação da linguagem em Scala (~250 linhas de código): [whilelang](http://github.com/lrlucena/whileleng)
 
 ## Projeto de Paradigmas de Linguagens de Programação
 
