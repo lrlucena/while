@@ -19,7 +19,7 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
     para i de 1 ate 5 passo 2 faca
       escreva i
 </pre>
-6. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
+8. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
 <pre>
     se nota > 6 entao
       exiba "Aprovado"
@@ -28,6 +28,15 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
     senao
       exiba "Reprovado"
 </pre>
+
+9. O comando `escolha` (switch).
+<pre>
+    x = leia
+    escolha x
+      caso 1 : escreva "um"
+      caso 2 : escreva "dois"
+      senao  : escreva "outro numero"
+ </pre>
 
 ### Escreva um artigo (com até 10 páginas) sobre linguagens. O artigo deve descrever as alterações realizadas na linguagem. Tópicos:
 1. Linguagens
