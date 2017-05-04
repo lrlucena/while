@@ -33,9 +33,9 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 <pre>
     x = leia
     escolha x
-      caso 1 : escreva "um"
-      caso 2 : escreva "dois"
-      senao  : escreva "outro numero"
+      caso 1 : exiba "um"
+      caso 2 : exiba "dois"
+      outro  : exiba "outro numero"
  </pre>
 
 ### Escreva um artigo (com até 10 páginas) sobre linguagens. O artigo deve descrever as alterações realizadas na linguagem. Tópicos:
