@@ -38,9 +38,9 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
       outro  : exiba "outro numero"
  </pre>
 
-### Escreva um artigo (com até 10 páginas) sobre linguagens. O artigo deve descrever as alterações realizadas na linguagem. Tópicos:
-1. Linguagens
-2. Gramática
-3. Parser
-4. BNF
-5. As alterações realizadas na linguagem original.
+10. A definição e aplicação de funções
+<pre>
+  soma(a,b) = a + b ;
+  
+  soma(2,3)
+</pre>
