@@ -29,12 +29,16 @@ public class Principal {
 	}
 
 	public static void main(String... args) throws IOException {
-		String arq = args[0];
-		final ParseTree tree = parse(arq);
-		final ParseTreeWalker walker = new ParseTreeWalker();
-		final MeuListener listener = new MeuListener();
-		walker.walk(listener, tree);
-		Programa p1 = listener.getPrograma();
-		p1.execute();
+		if (args.length > 0) {
+			String arq = args[0];
+			final ParseTree tree = parse(arq);
+			final ParseTreeWalker walker = new ParseTreeWalker();
+			final MeuListener listener = new MeuListener();
+			walker.walk(listener, tree);
+			Programa p1 = listener.getPrograma();
+			p1.execute();
+		} else {
+			System.out.println("Precisa fornecer o nome do arquivo para executar.");
+		}
 	}
 }
