@@ -1,8 +1,7 @@
-// Generated from Enquanto.g4 by ANTLR 4.4
+// Generated from Enquanto.g4 by ANTLR 4.7.2
 package plp.enquanto.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -17,252 +16,252 @@ public class EnquantoBaseListener implements EnquantoListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSeqComando(@NotNull EnquantoParser.SeqComandoContext ctx) { }
+	@Override public void enterPrograma(EnquantoParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSeqComando(@NotNull EnquantoParser.SeqComandoContext ctx) { }
+	@Override public void exitPrograma(EnquantoParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtribuicao(@NotNull EnquantoParser.AtribuicaoContext ctx) { }
+	@Override public void enterSeqComando(EnquantoParser.SeqComandoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtribuicao(@NotNull EnquantoParser.AtribuicaoContext ctx) { }
+	@Override public void exitSeqComando(EnquantoParser.SeqComandoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEnquanto(@NotNull EnquantoParser.EnquantoContext ctx) { }
+	@Override public void enterAtribuicao(EnquantoParser.AtribuicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEnquanto(@NotNull EnquantoParser.EnquantoContext ctx) { }
+	@Override public void exitAtribuicao(EnquantoParser.AtribuicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLeia(@NotNull EnquantoParser.LeiaContext ctx) { }
+	@Override public void enterSkip(EnquantoParser.SkipContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLeia(@NotNull EnquantoParser.LeiaContext ctx) { }
+	@Override public void exitSkip(EnquantoParser.SkipContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterELogico(@NotNull EnquantoParser.ELogicoContext ctx) { }
+	@Override public void enterSe(EnquantoParser.SeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitELogico(@NotNull EnquantoParser.ELogicoContext ctx) { }
+	@Override public void exitSe(EnquantoParser.SeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInteiro(@NotNull EnquantoParser.InteiroContext ctx) { }
+	@Override public void enterEnquanto(EnquantoParser.EnquantoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInteiro(@NotNull EnquantoParser.InteiroContext ctx) { }
+	@Override public void exitEnquanto(EnquantoParser.EnquantoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBloco(@NotNull EnquantoParser.BlocoContext ctx) { }
+	@Override public void enterExiba(EnquantoParser.ExibaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBloco(@NotNull EnquantoParser.BlocoContext ctx) { }
+	@Override public void exitExiba(EnquantoParser.ExibaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNaoLogico(@NotNull EnquantoParser.NaoLogicoContext ctx) { }
+	@Override public void enterEscreva(EnquantoParser.EscrevaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNaoLogico(@NotNull EnquantoParser.NaoLogicoContext ctx) { }
+	@Override public void exitEscreva(EnquantoParser.EscrevaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEscreva(@NotNull EnquantoParser.EscrevaContext ctx) { }
+	@Override public void enterBloco(EnquantoParser.BlocoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEscreva(@NotNull EnquantoParser.EscrevaContext ctx) { }
+	@Override public void exitBloco(EnquantoParser.BlocoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOpRel(@NotNull EnquantoParser.OpRelContext ctx) { }
+	@Override public void enterLeia(EnquantoParser.LeiaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOpRel(@NotNull EnquantoParser.OpRelContext ctx) { }
+	@Override public void exitLeia(EnquantoParser.LeiaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrograma(@NotNull EnquantoParser.ProgramaContext ctx) { }
+	@Override public void enterInteiro(EnquantoParser.InteiroContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrograma(@NotNull EnquantoParser.ProgramaContext ctx) { }
+	@Override public void exitInteiro(EnquantoParser.InteiroContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSkip(@NotNull EnquantoParser.SkipContext ctx) { }
+	@Override public void enterOpBin(EnquantoParser.OpBinContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSkip(@NotNull EnquantoParser.SkipContext ctx) { }
+	@Override public void exitOpBin(EnquantoParser.OpBinContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpPar(@NotNull EnquantoParser.ExpParContext ctx) { }
+	@Override public void enterId(EnquantoParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpPar(@NotNull EnquantoParser.ExpParContext ctx) { }
+	@Override public void exitId(EnquantoParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBoolPar(@NotNull EnquantoParser.BoolParContext ctx) { }
+	@Override public void enterExpPar(EnquantoParser.ExpParContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBoolPar(@NotNull EnquantoParser.BoolParContext ctx) { }
+	@Override public void exitExpPar(EnquantoParser.ExpParContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSe(@NotNull EnquantoParser.SeContext ctx) { }
+	@Override public void enterELogico(EnquantoParser.ELogicoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSe(@NotNull EnquantoParser.SeContext ctx) { }
+	@Override public void exitELogico(EnquantoParser.ELogicoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExiba(@NotNull EnquantoParser.ExibaContext ctx) { }
+	@Override public void enterBooleano(EnquantoParser.BooleanoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExiba(@NotNull EnquantoParser.ExibaContext ctx) { }
+	@Override public void exitBooleano(EnquantoParser.BooleanoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBooleano(@NotNull EnquantoParser.BooleanoContext ctx) { }
+	@Override public void enterNaoLogico(EnquantoParser.NaoLogicoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBooleano(@NotNull EnquantoParser.BooleanoContext ctx) { }
+	@Override public void exitNaoLogico(EnquantoParser.NaoLogicoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOpBin(@NotNull EnquantoParser.OpBinContext ctx) { }
+	@Override public void enterOpRel(EnquantoParser.OpRelContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOpBin(@NotNull EnquantoParser.OpBinContext ctx) { }
+	@Override public void exitOpRel(EnquantoParser.OpRelContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(@NotNull EnquantoParser.IdContext ctx) { }
+	@Override public void enterBoolPar(EnquantoParser.BoolParContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(@NotNull EnquantoParser.IdContext ctx) { }
+	@Override public void exitBoolPar(EnquantoParser.BoolParContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void enterEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void exitEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitTerminal(@NotNull TerminalNode node) { }
+	@Override public void visitTerminal(TerminalNode node) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitErrorNode(@NotNull ErrorNode node) { }
+	@Override public void visitErrorNode(ErrorNode node) { }
 }
