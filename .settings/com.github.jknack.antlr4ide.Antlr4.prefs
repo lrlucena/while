@@ -1,5 +1,5 @@
-antlr4.antlrRegisteredTools=4.4@/tmp/antlr-4.4-complete.jar\:4.7.2@/home/lucena/git/While/lib/antlr-4.7.2-complete.jar
-antlr4.antlrToolPath=/home/lucena/git/While/lib/antlr-4.7.2-complete.jar
+antlr4.antlrRegisteredTools=4.4@/tmp/antlr-4.4-complete.jar\:4.7.2@/home/aluno/lucena/While/lib/antlr-4.7.2-complete.jar
+antlr4.antlrToolPath=/home/aluno/lucena/While/lib/antlr-4.7.2-complete.jar
 antlr4.encoding=UTF-8
 antlr4.listener=true
 antlr4.visitor=false
