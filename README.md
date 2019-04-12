@@ -21,9 +21,9 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 </pre>
 8. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
 <pre>
-    se nota > 6 entao
+    se nota >= 6 entao
       exiba "Aprovado"
-    senaose nota > 3 entao
+    senaose nota >= 3 entao
       exiba "Recuperação"
     senao
       exiba "Reprovado"
