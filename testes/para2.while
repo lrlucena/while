@@ -1,0 +1,5 @@
+n := 1;
+para i de 1 ate 100 passo n faca {
+  escreva i;
+  n := n + 1
+}
