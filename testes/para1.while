@@ -1,0 +1,4 @@
+n := 10;
+para i de 1 ate n faca {
+  escreva i;
+}
