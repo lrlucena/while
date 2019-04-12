@@ -1,0 +1,4 @@
+n := 10;
+se n < 20      então exiba "menor do que vinte"
+senaose n < 15 entao exiba "menor do que quinze"
+senao                exiba "nao sei"
