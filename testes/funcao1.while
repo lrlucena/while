@@ -1,0 +1,3 @@
+  soma(a,b) = a + b ;
+  
+  escreva soma(2,3)

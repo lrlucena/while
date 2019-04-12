@@ -1,0 +1,6 @@
+    x = leia
+    escolha x
+      caso 1 : exiba "um"
+      caso 2 : exiba "dois"
+      caso 1 : exiba "one"
+      outro  : exiba "outro numero"
