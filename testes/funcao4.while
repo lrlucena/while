@@ -1,0 +1,5 @@
+x := 10;
+f(a, b) = a + b + g(a, b);
+g(x, y) = x * y;
+  
+escreva f(2, 3)
