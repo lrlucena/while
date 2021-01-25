@@ -1,4 +1,4 @@
-// Generated from Enquanto.g4 by ANTLR 4.7.2
+// Generated from C:/Users/leona/git/While/src/plp/enquanto/parser\Enquanto.g4 by ANTLR 4.9.1
 package plp.enquanto.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -184,6 +184,18 @@ public class EnquantoBaseListener implements EnquantoListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBool(EnquantoParser.BoolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBool(EnquantoParser.BoolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterELogico(EnquantoParser.ELogicoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -191,18 +203,6 @@ public class EnquantoBaseListener implements EnquantoListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitELogico(EnquantoParser.ELogicoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterBooleano(EnquantoParser.BooleanoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBooleano(EnquantoParser.BooleanoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

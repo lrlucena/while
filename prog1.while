@@ -1,1 +1,3 @@
-exiba "ok. Funciona"; escreva 10
+exiba "ok. Funciona";  # Funciona
+a := 34;
+escreva a

@@ -1,4 +1,4 @@
-// Generated from Enquanto.g4 by ANTLR 4.7.2
+// Generated from C:/Users/leona/git/While/src/plp/enquanto/parser\Enquanto.g4 by ANTLR 4.9.1
 package plp.enquanto.parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class EnquantoParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -19,14 +19,14 @@ public class EnquantoParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		INT=25, ID=26, Texto=27, Espaco=28;
+		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, BOOLEANO=23, INT=24, 
+		ID=25, TEXTO=26, Comentario=27, Espaco=28;
 	public static final int
 		RULE_programa = 0, RULE_seqComando = 1, RULE_comando = 2, RULE_expressao = 3, 
-		RULE_bool = 4;
+		RULE_booleano = 4;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"programa", "seqComando", "comando", "expressao", "bool"
+			"programa", "seqComando", "comando", "expressao", "booleano"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -35,16 +35,15 @@ public class EnquantoParser extends Parser {
 		return new String[] {
 			null, "';'", "':='", "'skip'", "'se'", "'entao'", "'senao'", "'enquanto'", 
 			"'faca'", "'exiba'", "'escreva'", "'{'", "'}'", "'leia'", "'*'", "'+'", 
-			"'-'", "'('", "')'", "'verdadeiro'", "'falso'", "'='", "'<='", "'nao'", 
-			"'e'"
+			"'-'", "'('", "')'", "'='", "'<='", "'nao'", "'e'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, "INT", "ID", "Texto", "Espaco"
+			null, null, null, null, null, null, null, null, null, null, null, "BOOLEANO", 
+			"INT", "ID", "TEXTO", "Comentario", "Espaco"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -223,8 +222,8 @@ public class EnquantoParser extends Parser {
 		}
 	}
 	public static class SeContext extends ComandoContext {
-		public BoolContext bool() {
-			return getRuleContext(BoolContext.class,0);
+		public BooleanoContext booleano() {
+			return getRuleContext(BooleanoContext.class,0);
 		}
 		public List<ComandoContext> comando() {
 			return getRuleContexts(ComandoContext.class);
@@ -243,7 +242,7 @@ public class EnquantoParser extends Parser {
 		}
 	}
 	public static class ExibaContext extends ComandoContext {
-		public TerminalNode Texto() { return getToken(EnquantoParser.Texto, 0); }
+		public TerminalNode TEXTO() { return getToken(EnquantoParser.TEXTO, 0); }
 		public ExibaContext(ComandoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -255,8 +254,8 @@ public class EnquantoParser extends Parser {
 		}
 	}
 	public static class EnquantoContext extends ComandoContext {
-		public BoolContext bool() {
-			return getRuleContext(BoolContext.class,0);
+		public BooleanoContext booleano() {
+			return getRuleContext(BooleanoContext.class,0);
 		}
 		public ComandoContext comando() {
 			return getRuleContext(ComandoContext.class,0);
@@ -345,7 +344,7 @@ public class EnquantoParser extends Parser {
 				setState(24);
 				match(T__3);
 				setState(25);
-				bool(0);
+				booleano(0);
 				setState(26);
 				match(T__4);
 				setState(27);
@@ -363,7 +362,7 @@ public class EnquantoParser extends Parser {
 				setState(31);
 				match(T__6);
 				setState(32);
-				bool(0);
+				booleano(0);
 				setState(33);
 				match(T__7);
 				setState(34);
@@ -377,7 +376,7 @@ public class EnquantoParser extends Parser {
 				setState(36);
 				match(T__8);
 				setState(37);
-				match(Texto);
+				match(TEXTO);
 				}
 				break;
 			case T__9:
@@ -506,6 +505,7 @@ public class EnquantoParser extends Parser {
 		ExpressaoContext _prevctx = _localctx;
 		int _startState = 6;
 		enterRecursionRule(_localctx, 6, RULE_expressao, _p);
+		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
@@ -558,7 +558,7 @@ public class EnquantoParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(67);
+			setState(64);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -566,7 +566,7 @@ public class EnquantoParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(65);
+					setState(62);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
@@ -574,11 +574,11 @@ public class EnquantoParser extends Parser {
 						_localctx = new OpBinContext(new ExpressaoContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expressao);
 						setState(56);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
 						setState(57);
 						match(T__13);
 						setState(58);
-						expressao(5);
+						expressao(4);
 						}
 						break;
 					case 2:
@@ -586,29 +586,25 @@ public class EnquantoParser extends Parser {
 						_localctx = new OpBinContext(new ExpressaoContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expressao);
 						setState(59);
-						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(60);
-						match(T__14);
-						setState(61);
-						expressao(4);
-						}
-						break;
-					case 3:
-						{
-						_localctx = new OpBinContext(new ExpressaoContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expressao);
-						setState(62);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(63);
-						match(T__15);
-						setState(64);
+						setState(60);
+						_la = _input.LA(1);
+						if ( !(_la==T__14 || _la==T__15) ) {
+						_errHandler.recoverInline(this);
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
+							consume();
+						}
+						setState(61);
 						expressao(3);
 						}
 						break;
 					}
 					} 
 				}
-				setState(69);
+				setState(66);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
@@ -625,25 +621,37 @@ public class EnquantoParser extends Parser {
 		return _localctx;
 	}
 
-	public static class BoolContext extends ParserRuleContext {
-		public BoolContext(ParserRuleContext parent, int invokingState) {
+	public static class BooleanoContext extends ParserRuleContext {
+		public BooleanoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_bool; }
+		@Override public int getRuleIndex() { return RULE_booleano; }
 	 
-		public BoolContext() { }
-		public void copyFrom(BoolContext ctx) {
+		public BooleanoContext() { }
+		public void copyFrom(BooleanoContext ctx) {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class ELogicoContext extends BoolContext {
-		public List<BoolContext> bool() {
-			return getRuleContexts(BoolContext.class);
+	public static class BoolContext extends BooleanoContext {
+		public TerminalNode BOOLEANO() { return getToken(EnquantoParser.BOOLEANO, 0); }
+		public BoolContext(BooleanoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterBool(this);
 		}
-		public BoolContext bool(int i) {
-			return getRuleContext(BoolContext.class,i);
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBool(this);
 		}
-		public ELogicoContext(BoolContext ctx) { copyFrom(ctx); }
+	}
+	public static class ELogicoContext extends BooleanoContext {
+		public List<BooleanoContext> booleano() {
+			return getRuleContexts(BooleanoContext.class);
+		}
+		public BooleanoContext booleano(int i) {
+			return getRuleContext(BooleanoContext.class,i);
+		}
+		public ELogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterELogico(this);
@@ -653,22 +661,11 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitELogico(this);
 		}
 	}
-	public static class BooleanoContext extends BoolContext {
-		public BooleanoContext(BoolContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterBooleano(this);
+	public static class NaoLogicoContext extends BooleanoContext {
+		public BooleanoContext booleano() {
+			return getRuleContext(BooleanoContext.class,0);
 		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBooleano(this);
-		}
-	}
-	public static class NaoLogicoContext extends BoolContext {
-		public BoolContext bool() {
-			return getRuleContext(BoolContext.class,0);
-		}
-		public NaoLogicoContext(BoolContext ctx) { copyFrom(ctx); }
+		public NaoLogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterNaoLogico(this);
@@ -678,14 +675,14 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitNaoLogico(this);
 		}
 	}
-	public static class OpRelContext extends BoolContext {
+	public static class OpRelContext extends BooleanoContext {
 		public List<ExpressaoContext> expressao() {
 			return getRuleContexts(ExpressaoContext.class);
 		}
 		public ExpressaoContext expressao(int i) {
 			return getRuleContext(ExpressaoContext.class,i);
 		}
-		public OpRelContext(BoolContext ctx) { copyFrom(ctx); }
+		public OpRelContext(BooleanoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterOpRel(this);
@@ -695,11 +692,11 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOpRel(this);
 		}
 	}
-	public static class BoolParContext extends BoolContext {
-		public BoolContext bool() {
-			return getRuleContext(BoolContext.class,0);
+	public static class BoolParContext extends BooleanoContext {
+		public BooleanoContext booleano() {
+			return getRuleContext(BooleanoContext.class,0);
 		}
-		public BoolParContext(BoolContext ctx) { copyFrom(ctx); }
+		public BoolParContext(BooleanoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterBoolPar(this);
@@ -710,41 +707,32 @@ public class EnquantoParser extends Parser {
 		}
 	}
 
-	public final BoolContext bool() throws RecognitionException {
-		return bool(0);
+	public final BooleanoContext booleano() throws RecognitionException {
+		return booleano(0);
 	}
 
-	private BoolContext bool(int _p) throws RecognitionException {
+	private BooleanoContext booleano(int _p) throws RecognitionException {
 		ParserRuleContext _parentctx = _ctx;
 		int _parentState = getState();
-		BoolContext _localctx = new BoolContext(_ctx, _parentState);
-		BoolContext _prevctx = _localctx;
+		BooleanoContext _localctx = new BooleanoContext(_ctx, _parentState);
+		BooleanoContext _prevctx = _localctx;
 		int _startState = 8;
-		enterRecursionRule(_localctx, 8, RULE_bool, _p);
-		int _la;
+		enterRecursionRule(_localctx, 8, RULE_booleano, _p);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(86);
+			setState(83);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				{
-				_localctx = new BooleanoContext(_localctx);
+				_localctx = new BoolContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(71);
-				_la = _input.LA(1);
-				if ( !(_la==T__18 || _la==T__19) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
+				setState(68);
+				match(BOOLEANO);
 				}
 				break;
 			case 2:
@@ -752,11 +740,11 @@ public class EnquantoParser extends Parser {
 				_localctx = new OpRelContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(72);
+				setState(69);
 				expressao(0);
-				setState(73);
-				match(T__20);
-				setState(74);
+				setState(70);
+				match(T__18);
+				setState(71);
 				expressao(0);
 				}
 				break;
@@ -765,11 +753,11 @@ public class EnquantoParser extends Parser {
 				_localctx = new OpRelContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(76);
+				setState(73);
 				expressao(0);
-				setState(77);
-				match(T__21);
-				setState(78);
+				setState(74);
+				match(T__19);
+				setState(75);
 				expressao(0);
 				}
 				break;
@@ -778,10 +766,10 @@ public class EnquantoParser extends Parser {
 				_localctx = new NaoLogicoContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(80);
-				match(T__22);
-				setState(81);
-				bool(3);
+				setState(77);
+				match(T__20);
+				setState(78);
+				booleano(3);
 				}
 				break;
 			case 5:
@@ -789,17 +777,17 @@ public class EnquantoParser extends Parser {
 				_localctx = new BoolParContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(82);
+				setState(79);
 				match(T__16);
-				setState(83);
-				bool(0);
-				setState(84);
+				setState(80);
+				booleano(0);
+				setState(81);
 				match(T__17);
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(93);
+			setState(90);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -808,18 +796,18 @@ public class EnquantoParser extends Parser {
 					_prevctx = _localctx;
 					{
 					{
-					_localctx = new ELogicoContext(new BoolContext(_parentctx, _parentState));
-					pushNewRecursionContext(_localctx, _startState, RULE_bool);
-					setState(88);
+					_localctx = new ELogicoContext(new BooleanoContext(_parentctx, _parentState));
+					pushNewRecursionContext(_localctx, _startState, RULE_booleano);
+					setState(85);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(89);
-					match(T__23);
-					setState(90);
-					bool(3);
+					setState(86);
+					match(T__21);
+					setState(87);
+					booleano(3);
 					}
 					} 
 				}
-				setState(95);
+				setState(92);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 			}
@@ -841,56 +829,53 @@ public class EnquantoParser extends Parser {
 		case 3:
 			return expressao_sempred((ExpressaoContext)_localctx, predIndex);
 		case 4:
-			return bool_sempred((BoolContext)_localctx, predIndex);
+			return booleano_sempred((BooleanoContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean expressao_sempred(ExpressaoContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 4);
-		case 1:
 			return precpred(_ctx, 3);
-		case 2:
+		case 1:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
-	private boolean bool_sempred(BoolContext _localctx, int predIndex) {
+	private boolean booleano_sempred(BooleanoContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 3:
+		case 2:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\36c\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\36`\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\3\3\3\3\3\7\3\22\n\3\f\3\16\3\25"+
 		"\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
 		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4/\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
-		"\3\5\5\59\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5D\n\5\f\5\16\5G\13"+
-		"\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6"+
-		"Y\n\6\3\6\3\6\3\6\7\6^\n\6\f\6\16\6a\13\6\3\6\2\4\b\n\7\2\4\6\b\n\2\3"+
-		"\3\2\25\26\2o\2\f\3\2\2\2\4\16\3\2\2\2\6.\3\2\2\2\b8\3\2\2\2\nX\3\2\2"+
-		"\2\f\r\5\4\3\2\r\3\3\2\2\2\16\23\5\6\4\2\17\20\7\3\2\2\20\22\5\6\4\2\21"+
-		"\17\3\2\2\2\22\25\3\2\2\2\23\21\3\2\2\2\23\24\3\2\2\2\24\5\3\2\2\2\25"+
-		"\23\3\2\2\2\26\27\7\34\2\2\27\30\7\4\2\2\30/\5\b\5\2\31/\7\5\2\2\32\33"+
-		"\7\6\2\2\33\34\5\n\6\2\34\35\7\7\2\2\35\36\5\6\4\2\36\37\7\b\2\2\37 \5"+
-		"\6\4\2 /\3\2\2\2!\"\7\t\2\2\"#\5\n\6\2#$\7\n\2\2$%\5\6\4\2%/\3\2\2\2&"+
-		"\'\7\13\2\2\'/\7\35\2\2()\7\f\2\2)/\5\b\5\2*+\7\r\2\2+,\5\4\3\2,-\7\16"+
-		"\2\2-/\3\2\2\2.\26\3\2\2\2.\31\3\2\2\2.\32\3\2\2\2.!\3\2\2\2.&\3\2\2\2"+
-		".(\3\2\2\2.*\3\2\2\2/\7\3\2\2\2\60\61\b\5\1\2\619\7\33\2\2\629\7\17\2"+
-		"\2\639\7\34\2\2\64\65\7\23\2\2\65\66\5\b\5\2\66\67\7\24\2\2\679\3\2\2"+
-		"\28\60\3\2\2\28\62\3\2\2\28\63\3\2\2\28\64\3\2\2\29E\3\2\2\2:;\f\6\2\2"+
-		";<\7\20\2\2<D\5\b\5\7=>\f\5\2\2>?\7\21\2\2?D\5\b\5\6@A\f\4\2\2AB\7\22"+
-		"\2\2BD\5\b\5\5C:\3\2\2\2C=\3\2\2\2C@\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2"+
-		"\2\2F\t\3\2\2\2GE\3\2\2\2HI\b\6\1\2IY\t\2\2\2JK\5\b\5\2KL\7\27\2\2LM\5"+
-		"\b\5\2MY\3\2\2\2NO\5\b\5\2OP\7\30\2\2PQ\5\b\5\2QY\3\2\2\2RS\7\31\2\2S"+
-		"Y\5\n\6\5TU\7\23\2\2UV\5\n\6\2VW\7\24\2\2WY\3\2\2\2XH\3\2\2\2XJ\3\2\2"+
-		"\2XN\3\2\2\2XR\3\2\2\2XT\3\2\2\2Y_\3\2\2\2Z[\f\4\2\2[\\\7\32\2\2\\^\5"+
-		"\n\6\5]Z\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2\2`\13\3\2\2\2a_\3\2\2\2\t"+
-		"\23.8CEX_";
+		"\3\5\5\59\n\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5A\n\5\f\5\16\5D\13\5\3\6\3\6"+
+		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6V\n\6\3\6"+
+		"\3\6\3\6\7\6[\n\6\f\6\16\6^\13\6\3\6\2\4\b\n\7\2\4\6\b\n\2\3\3\2\21\22"+
+		"\2k\2\f\3\2\2\2\4\16\3\2\2\2\6.\3\2\2\2\b8\3\2\2\2\nU\3\2\2\2\f\r\5\4"+
+		"\3\2\r\3\3\2\2\2\16\23\5\6\4\2\17\20\7\3\2\2\20\22\5\6\4\2\21\17\3\2\2"+
+		"\2\22\25\3\2\2\2\23\21\3\2\2\2\23\24\3\2\2\2\24\5\3\2\2\2\25\23\3\2\2"+
+		"\2\26\27\7\33\2\2\27\30\7\4\2\2\30/\5\b\5\2\31/\7\5\2\2\32\33\7\6\2\2"+
+		"\33\34\5\n\6\2\34\35\7\7\2\2\35\36\5\6\4\2\36\37\7\b\2\2\37 \5\6\4\2 "+
+		"/\3\2\2\2!\"\7\t\2\2\"#\5\n\6\2#$\7\n\2\2$%\5\6\4\2%/\3\2\2\2&\'\7\13"+
+		"\2\2\'/\7\34\2\2()\7\f\2\2)/\5\b\5\2*+\7\r\2\2+,\5\4\3\2,-\7\16\2\2-/"+
+		"\3\2\2\2.\26\3\2\2\2.\31\3\2\2\2.\32\3\2\2\2.!\3\2\2\2.&\3\2\2\2.(\3\2"+
+		"\2\2.*\3\2\2\2/\7\3\2\2\2\60\61\b\5\1\2\619\7\32\2\2\629\7\17\2\2\639"+
+		"\7\33\2\2\64\65\7\23\2\2\65\66\5\b\5\2\66\67\7\24\2\2\679\3\2\2\28\60"+
+		"\3\2\2\28\62\3\2\2\28\63\3\2\2\28\64\3\2\2\29B\3\2\2\2:;\f\5\2\2;<\7\20"+
+		"\2\2<A\5\b\5\6=>\f\4\2\2>?\t\2\2\2?A\5\b\5\5@:\3\2\2\2@=\3\2\2\2AD\3\2"+
+		"\2\2B@\3\2\2\2BC\3\2\2\2C\t\3\2\2\2DB\3\2\2\2EF\b\6\1\2FV\7\31\2\2GH\5"+
+		"\b\5\2HI\7\25\2\2IJ\5\b\5\2JV\3\2\2\2KL\5\b\5\2LM\7\26\2\2MN\5\b\5\2N"+
+		"V\3\2\2\2OP\7\27\2\2PV\5\n\6\5QR\7\23\2\2RS\5\n\6\2ST\7\24\2\2TV\3\2\2"+
+		"\2UE\3\2\2\2UG\3\2\2\2UK\3\2\2\2UO\3\2\2\2UQ\3\2\2\2V\\\3\2\2\2WX\f\4"+
+		"\2\2XY\7\30\2\2Y[\5\n\6\5ZW\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]\13"+
+		"\3\2\2\2^\\\3\2\2\2\t\23.8@BU\\";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

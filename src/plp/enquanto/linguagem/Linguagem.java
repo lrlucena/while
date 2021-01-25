@@ -10,20 +10,20 @@ public interface Linguagem {
 	final Scanner scanner = new Scanner(System.in);
 
 	interface Bool {
-		public boolean getValor();
+		boolean getValor();
 	}
 
 	interface Comando {
-		public void execute();
+		void execute();
 	}
 
 	interface Expressao {
-		public int getValor();
+		int getValor();
 	}
 
 	abstract class ExpBin implements Expressao {
-		protected Expressao esq;
-		protected Expressao dir;
+		protected final Expressao esq;
+		protected final Expressao dir;
 
 		public ExpBin(Expressao esq, Expressao dir) {
 			this.esq = esq;
@@ -32,21 +32,19 @@ public interface Linguagem {
 	}
 
 	class Programa {
-		private List<Comando> comandos;
+		private final List<Comando> comandos;
 		public Programa(List<Comando> comandos) {
 			this.comandos = comandos;
 		}
 		public void execute() {
-			for (Comando comando : comandos) {
-				comando.execute();
-			}
+			comandos.forEach(Comando::execute);
 		}
 	}
 
 	class Se implements Comando {
-		private Bool condicao;
-		private Comando entao;
-		private Comando senao;
+		private final Bool condicao;
+		private final Comando entao;
+		private final Comando senao;
 
 		public Se(Bool condicao, Comando entao, Comando senao) {
 			this.condicao = condicao;
@@ -66,12 +64,11 @@ public interface Linguagem {
 	Skip skip = new Skip();
 	class Skip implements Comando {
 		@Override
-		public void execute() {
-		}
+		public void execute() {}
 	}
 
 	class Escreva implements Comando {
-		private Expressao exp;
+		private final Expressao exp;
 
 		public Escreva(Expressao exp) {
 			this.exp = exp;
@@ -84,28 +81,28 @@ public interface Linguagem {
 	}
 
 	class Enquanto implements Comando {
-		private Bool condicao;
-		private Comando faca;
+		private final Bool condicao;
+		private final Comando comando;
 
-		public Enquanto(Bool condicao, Comando faca) {
+		public Enquanto(Bool condicao, Comando comando) {
 			this.condicao = condicao;
-			this.faca = faca;
+			this.comando = comando;
 		}
 
 		@Override
 		public void execute() {
 			while (condicao.getValor()) {
-				faca.execute();
+				comando.execute();
 			}
 		}
 	}
 
 	class Exiba implements Comando {
+		private final String texto;
+
 		public Exiba(String texto) {
 			this.texto = texto;
 		}
-
-		private String texto;
 
 		@Override
 		public void execute() {
@@ -114,7 +111,7 @@ public interface Linguagem {
 	}
 
 	class Bloco implements Comando {
-		private List<Comando> comandos;
+		private final List<Comando> comandos;
 
 		public Bloco(List<Comando> comandos) {
 			this.comandos = comandos;
@@ -122,15 +119,13 @@ public interface Linguagem {
 
 		@Override
 		public void execute() {
-			for (Comando comando : comandos) {
-				comando.execute();
-			}
+			comandos.forEach(Comando::execute);
 		}
 	}
 
 	class Atribuicao implements Comando {
-		private String id;
-		private Expressao exp;
+		private final String id;
+		private final Expressao exp;
 
 		public Atribuicao(String id, Expressao exp) {
 			this.id = id;
@@ -144,7 +139,7 @@ public interface Linguagem {
 	}
 
 	class Inteiro implements Expressao {
-		private int valor;
+		private final int valor;
 
 		public Inteiro(int valor) {
 			this.valor = valor;
@@ -157,7 +152,7 @@ public interface Linguagem {
 	}
 
 	class Id implements Expressao {
-		private String id;
+		private final String id;
 
 		public Id(String id) {
 			this.id = id;
@@ -165,14 +160,7 @@ public interface Linguagem {
 
 		@Override
 		public int getValor() {
-			final Integer v = ambiente.get(id);
-			final int valor;
-			if (v != null)
-				valor = v;
-			else
-				valor = 0;
-
-			return valor;
+			return ambiente.getOrDefault(id, 0);
 		}
 	}
 
@@ -218,7 +206,7 @@ public interface Linguagem {
 	}
 
 	class Booleano implements Bool {
-		private boolean valor;
+		private final boolean valor;
 
 		public Booleano(boolean valor) {
 			this.valor = valor;
@@ -231,8 +219,7 @@ public interface Linguagem {
 	}
 
 	abstract class ExpRel implements Bool {
-		protected Expressao esq;
-		protected Expressao dir;
+		protected final Expressao esq, dir;
 
 		public ExpRel(Expressao esq, Expressao dir) {
 			this.esq = esq;
@@ -241,7 +228,6 @@ public interface Linguagem {
 	}
 
 	public class ExpIgual extends ExpRel {
-
 		public ExpIgual(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
@@ -265,7 +251,7 @@ public interface Linguagem {
 	}
 
 	public class NaoLogico implements Bool {
-		private Bool b;
+		private final Bool b;
 
 		public NaoLogico(Bool b) {
 			this.b = b;
@@ -278,8 +264,7 @@ public interface Linguagem {
 	}
 
 	public class ELogico implements Bool {
-		private Bool esq;
-		private Bool dir;
+		private final Bool esq, dir;
 
 		public ELogico(Bool esq, Bool dir) {
 			this.esq = esq;

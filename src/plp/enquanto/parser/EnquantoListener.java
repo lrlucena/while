@@ -1,4 +1,4 @@
-// Generated from Enquanto.g4 by ANTLR 4.7.2
+// Generated from C:/Users/leona/git/While/src/plp/enquanto/parser\Enquanto.g4 by ANTLR 4.9.1
 package plp.enquanto.parser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -172,62 +172,62 @@ public interface EnquantoListener extends ParseTreeListener {
 	 */
 	void exitExpPar(EnquantoParser.ExpParContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code bool}
+	 * labeled alternative in {@link EnquantoParser#booleano}.
+	 * @param ctx the parse tree
+	 */
+	void enterBool(EnquantoParser.BoolContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code bool}
+	 * labeled alternative in {@link EnquantoParser#booleano}.
+	 * @param ctx the parse tree
+	 */
+	void exitBool(EnquantoParser.BoolContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code eLogico}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void enterELogico(EnquantoParser.ELogicoContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code eLogico}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void exitELogico(EnquantoParser.ELogicoContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code booleano}
-	 * labeled alternative in {@link EnquantoParser#bool}.
-	 * @param ctx the parse tree
-	 */
-	void enterBooleano(EnquantoParser.BooleanoContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code booleano}
-	 * labeled alternative in {@link EnquantoParser#bool}.
-	 * @param ctx the parse tree
-	 */
-	void exitBooleano(EnquantoParser.BooleanoContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code naoLogico}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void enterNaoLogico(EnquantoParser.NaoLogicoContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code naoLogico}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void exitNaoLogico(EnquantoParser.NaoLogicoContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code opRel}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void enterOpRel(EnquantoParser.OpRelContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code opRel}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void exitOpRel(EnquantoParser.OpRelContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code boolPar}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void enterBoolPar(EnquantoParser.BoolParContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code boolPar}
-	 * labeled alternative in {@link EnquantoParser#bool}.
+	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
 	 */
 	void exitBoolPar(EnquantoParser.BoolParContext ctx);

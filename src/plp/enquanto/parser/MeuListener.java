@@ -3,175 +3,159 @@ package plp.enquanto.parser;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeProperty;
-
 import plp.enquanto.linguagem.Linguagem.*;
+import plp.enquanto.parser.EnquantoParser.*;
+
+import static java.lang.Integer.parseInt;
 
 public class MeuListener extends EnquantoBaseListener {
-	private final Leia leia = new Leia();
-	private final Skip skip = new Skip();
-	private final ParseTreeProperty<Object> values = new ParseTreeProperty<>();
+	private final Leia leia;
+	private final Skip skip;
+	private final Propriedades valores;
 
 	private Programa programa;
+
+	public MeuListener() {
+		leia = new Leia();
+		skip = new Skip();
+		valores = new Propriedades();
+	}
 
 	public Programa getPrograma() {
 		return programa;
 	}
 
-	private void setValue(final ParseTree node, final Object value) {
-		values.put(node, value);
-	}
-
-	private Object getValue(final ParseTree node) {
-		return values.get(node);
+	@Override
+	public void exitBool(BoolContext ctx) {
+		valores.insira(ctx, new Booleano("verdadeiro".equals(ctx.getText())));
 	}
 
 	@Override
-	public void exitBooleano(final EnquantoParser.BooleanoContext ctx) {
-		setValue(ctx, new Booleano(ctx.getText().equals("verdadeiro")));
+	public void exitLeia(LeiaContext ctx) {
+		valores.insira(ctx, leia);
 	}
 
 	@Override
-	public void exitLeia(final EnquantoParser.LeiaContext ctx) {
-		setValue(ctx, leia);
+	public void exitSe(SeContext ctx) {
+		final Bool condicao = valores.pegue(ctx.booleano());
+		final Comando entao = valores.pegue(ctx.comando(0));
+		final Comando senao = valores.pegue(ctx.comando(1));
+		valores.insira(ctx, new Se(condicao, entao, senao));
 	}
 
 	@Override
-	public void exitSe(final EnquantoParser.SeContext ctx) {
-		final Bool condicao = (Bool) getValue(ctx.bool());
-		final Comando entao = (Comando) getValue(ctx.comando(0));
-		final Comando senao = (Comando) getValue(ctx.comando(1));
-		setValue(ctx, new Se(condicao, entao, senao));
+	public void exitInteiro(InteiroContext ctx) {
+		valores.insira(ctx, new Inteiro(parseInt(ctx.getText())));
 	}
 
 	@Override
-	public void exitInteiro(final EnquantoParser.InteiroContext ctx) {
-		setValue(ctx, new Inteiro(Integer.parseInt(ctx.getText())));
+	public void exitSkip(SkipContext ctx) {
+		valores.insira(ctx, skip);
 	}
 
 	@Override
-	public void exitSkip(final EnquantoParser.SkipContext ctx) {
-		setValue(ctx, skip);
+	public void exitEscreva(EscrevaContext ctx) {
+		final Expressao exp = valores.pegue(ctx.expressao());
+		valores.insira(ctx, new Escreva(exp));
 	}
 
 	@Override
-	public void exitEscreva(final EnquantoParser.EscrevaContext ctx) {
-		final Expressao exp = (Expressao) getValue(ctx.expressao());
-		setValue(ctx, new Escreva(exp));
-	}
-
-	@Override
-	public void exitPrograma(final EnquantoParser.ProgramaContext ctx) {
-		@SuppressWarnings("unchecked")
-		final List<Comando> cmds = (List<Comando>) getValue(ctx.seqComando());
+	public void exitPrograma(ProgramaContext ctx) {
+		final List<Comando> cmds = valores.pegue(ctx.seqComando());
 		programa = new Programa(cmds);
-		setValue(ctx, programa);
+		valores.insira(ctx, programa);
 	}
 
 	@Override
-	public void exitId(final EnquantoParser.IdContext ctx) {
-		setValue(ctx, new Id(ctx.ID().getText()));
+	public void exitId(IdContext ctx) {
+		final String id = ctx.ID().getText();
+		valores.insira(ctx, new Id(id));
 	}
 
 	@Override
-	public void exitSeqComando(final EnquantoParser.SeqComandoContext ctx) {
+	public void exitSeqComando(SeqComandoContext ctx) {
 		final List<Comando> comandos = new ArrayList<>();
 		for (EnquantoParser.ComandoContext c : ctx.comando()) {
-			comandos.add((Comando) getValue(c));
+			comandos.add(valores.pegue(c));
 		}
-		setValue(ctx, comandos);
+		valores.insira(ctx, comandos);
 	}
 
 	@Override
-	public void exitAtribuicao(final EnquantoParser.AtribuicaoContext ctx) {
+	public void exitAtribuicao(AtribuicaoContext ctx) {
 		final String id = ctx.ID().getText();
-		final Expressao exp = (Expressao) getValue(ctx.expressao());
-		setValue(ctx, new Atribuicao(id, exp));
+		final Expressao exp = valores.pegue(ctx.expressao());
+		valores.insira(ctx, new Atribuicao(id, exp));
 	}
 
 	@Override
-	public void exitBloco(final EnquantoParser.BlocoContext ctx) {
-		@SuppressWarnings("unchecked")
-		final List<Comando> cmds = (List<Comando>) getValue(ctx.seqComando());
-		setValue(ctx, new Bloco(cmds));
+	public void exitBloco(BlocoContext ctx) {
+		final List<Comando> cmds = valores.pegue(ctx.seqComando());
+		valores.insira(ctx, new Bloco(cmds));
 	}
 
 	@Override
-	public void exitOpBin(final EnquantoParser.OpBinContext ctx) {
-		final Expressao esq = (Expressao) getValue(ctx.expressao(0));
-		final Expressao dir = (Expressao) getValue(ctx.expressao(1));
+	public void exitOpBin(OpBinContext ctx) {
+		final Expressao esq = valores.pegue(ctx.expressao(0));
+		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
-		final ExpBin exp;
-		switch (op) {
-		case "+":
-			exp = new ExpSoma(esq, dir);
-			break;
-		case "*":
-			exp = new ExpMult(esq, dir);
-			break;
-		case "-":
-			exp = new ExpSub(esq, dir);
-			break;
-		default:
-			exp = new ExpSoma(esq, dir);
-		}
-		setValue(ctx, exp);
+		final ExpBin exp = switch (op) {
+			case "*" -> new ExpMult(esq, dir);
+			case "-" -> new ExpSub(esq, dir);
+			default  -> new ExpSoma(esq, dir);
+		};
+		valores.insira(ctx, exp);
 	}
 
 	@Override
-	public void exitEnquanto(final EnquantoParser.EnquantoContext ctx) {
-		final Bool condicao = (Bool) getValue(ctx.bool());
-		final Comando comando = (Comando) getValue(ctx.comando());
-		setValue(ctx, new Enquanto(condicao, comando));
+	public void exitEnquanto(EnquantoContext ctx) {
+		final Bool condicao = valores.pegue(ctx.booleano());
+		final Comando comando = valores.pegue(ctx.comando());
+		valores.insira(ctx, new Enquanto(condicao, comando));
 	}
 
 	@Override
-	public void exitELogico(final EnquantoParser.ELogicoContext ctx) {
-		final Bool esq = (Bool) getValue(ctx.bool(0));
-		final Bool dir = (Bool) getValue(ctx.bool(1));
-		setValue(ctx, new ELogico(esq, dir));
+	public void exitELogico(ELogicoContext ctx) {
+		final Bool esq = valores.pegue(ctx.booleano(0));
+		final Bool dir = valores.pegue(ctx.booleano(1));
+		valores.insira(ctx, new ELogico(esq, dir));
 	}
 
 	@Override
-	public void exitBoolPar(final EnquantoParser.BoolParContext ctx) {
-		setValue(ctx, getValue(ctx.bool()));
+	public void exitBoolPar(BoolParContext ctx) {
+		final Bool booleano = valores.pegue(ctx.booleano());
+		valores.insira(ctx, booleano);
 	}
 
 	@Override
-	public void exitNaoLogico(final EnquantoParser.NaoLogicoContext ctx) {
-		final Bool b = (Bool) getValue(ctx.bool());
-		setValue(ctx, new NaoLogico(b));
+	public void exitNaoLogico(NaoLogicoContext ctx) {
+		final Bool b = valores.pegue(ctx.booleano());
+		valores.insira(ctx, new NaoLogico(b));
 	}
 
 	@Override
-	public void exitExpPar(final EnquantoParser.ExpParContext ctx) {
-		setValue(ctx, getValue(ctx.expressao()));
+	public void exitExpPar(ExpParContext ctx) {
+		final Expressao exp = valores.pegue(ctx.expressao());
+		valores.insira(ctx, exp);
 	}
 
 	@Override
-	public void exitExiba(final EnquantoParser.ExibaContext ctx) {
-		final String t = ctx.Texto().getText();
+	public void exitExiba(ExibaContext ctx) {
+		final String t = ctx.TEXTO().getText();
 		final String texto = t.substring(1, t.length() - 1);
-		setValue(ctx, new Exiba(texto));
+		valores.insira(ctx, new Exiba(texto));
 	}
 
 	@Override
-	public void exitOpRel(final EnquantoParser.OpRelContext ctx) {
-		final Expressao esq = (Expressao) getValue(ctx.expressao(0));
-		final Expressao dir = (Expressao) getValue(ctx.expressao(1));
+	public void exitOpRel(OpRelContext ctx) {
+		final Expressao esq = valores.pegue(ctx.expressao(0));
+		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
-		final ExpRel exp;
-		switch (op) {
-		case "=":
-			exp = new ExpIgual(esq, dir);
-			break;
-		case "<=":
-			exp = new ExpMenorIgual(esq, dir);
-			break;
-		default:
-			exp = new ExpIgual(esq, dir);
-		}
-		setValue(ctx, exp);
+		final ExpRel exp = switch (op) {
+			case "="  -> new ExpIgual(esq, dir);
+			case "<=" -> new ExpMenorIgual(esq, dir);
+			default   -> new ExpIgual(esq, esq);
+		};
+		valores.insira(ctx, exp);
 	}
 }
