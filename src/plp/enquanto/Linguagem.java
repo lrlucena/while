@@ -1,4 +1,4 @@
-package plp.enquanto.linguagem;
+package plp.enquanto;
 
 import java.util.HashMap;
 import java.util.List;

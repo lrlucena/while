@@ -9,12 +9,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
-import plp.enquanto.linguagem.Linguagem.Programa;
+import plp.enquanto.Linguagem.Programa;
 import plp.enquanto.parser.EnquantoLexer;
 import plp.enquanto.parser.EnquantoParser;
-import plp.enquanto.parser.MeuListener;
-
-import static java.lang.System.*;
 
 public class Principal {
 
@@ -36,14 +33,16 @@ public class Principal {
 		if (args.length > 0) {
 			arq = args[0];
 		} else {
-			out.print("Qual o arquivo para executar? ");
-			arq = new Scanner(in).nextLine();
+			System.out.print("Qual o arquivo para executar? ");
+			Scanner scanner = new Scanner(System.in);
+			arq = scanner.nextLine();
+			scanner.close();
 		}
 		final ParseTree tree = parse(arq);
 		final ParseTreeWalker walker = new ParseTreeWalker();
 		final MeuListener listener = new MeuListener();
 		walker.walk(listener, tree);
-		Programa p1 = listener.getPrograma();
-		p1.execute();
+		Programa programa = listener.getPrograma();
+		programa.execute();
 	}
 }

@@ -1,9 +1,11 @@
-package plp.enquanto.parser;
+package plp.enquanto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import plp.enquanto.linguagem.Linguagem.*;
+import plp.enquanto.Linguagem.*;
+import plp.enquanto.parser.EnquantoBaseListener;
+import plp.enquanto.parser.EnquantoParser;
 import plp.enquanto.parser.EnquantoParser.*;
 
 import static java.lang.Integer.parseInt;

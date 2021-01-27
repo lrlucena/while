@@ -1,4 +1,4 @@
-// Generated from C:/Users/leona/git/While/src/plp/enquanto/parser\Enquanto.g4 by ANTLR 4.9.1
+// Generated from .\src\plp\enquanto\parser\Enquanto.g4 by ANTLR 4.9.1
 package plp.enquanto.parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;

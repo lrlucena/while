@@ -1,0 +1,1 @@
+java -jar while.jar %1

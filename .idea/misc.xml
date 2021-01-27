@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ANTLRGenerationPreferences">
+    <option name="perGrammarGenerationSettings">
+      <list>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\leona\git\While\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="plp.enquanto.parser" />
+          <option name="language" value="Java" />
+        </PerGrammarGenerationSettings>
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="openjdk-14" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project>
