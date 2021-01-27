@@ -10,14 +10,14 @@ import plp.enquanto.parser.EnquantoParser.*;
 
 import static java.lang.Integer.parseInt;
 
-public class MeuListener extends EnquantoBaseListener {
+public class Regras extends EnquantoBaseListener {
 	private final Leia leia;
 	private final Skip skip;
 	private final Propriedades valores;
 
 	private Programa programa;
 
-	public MeuListener() {
+	public Regras() {
 		leia = new Leia();
 		skip = new Skip();
 		valores = new Propriedades();

@@ -40,9 +40,9 @@ public class Principal {
 		}
 		final ParseTree tree = parse(arq);
 		final ParseTreeWalker walker = new ParseTreeWalker();
-		final MeuListener listener = new MeuListener();
-		walker.walk(listener, tree);
-		Programa programa = listener.getPrograma();
+		final Regras regras = new Regras();
+		walker.walk(regras, tree);
+		Programa programa = regras.getPrograma();
 		programa.execute();
 	}
 }
