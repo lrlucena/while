@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public interface Linguagem {
-	final Map<String, Integer> ambiente = new HashMap<>();
-	final Scanner scanner = new Scanner(System.in);
+interface Linguagem {
+	Map<String, Integer> ambiente = new HashMap<>();
+	Scanner scanner = new Scanner(System.in);
 
 	interface Bool {
 		boolean getValor();
@@ -21,16 +21,9 @@ public interface Linguagem {
 		int getValor();
 	}
 
-	abstract class ExpBin implements Expressao {
-		protected final Expressao esq;
-		protected final Expressao dir;
-
-		public ExpBin(Expressao esq, Expressao dir) {
-			this.esq = esq;
-			this.dir = dir;
-		}
-	}
-
+	/*
+	  Comandos
+	 */
 	class Programa {
 		private final List<Comando> comandos;
 		public Programa(List<Comando> comandos) {
@@ -127,7 +120,7 @@ public interface Linguagem {
 		private final String id;
 		private final Expressao exp;
 
-		public Atribuicao(String id, Expressao exp) {
+		Atribuicao(String id, Expressao exp) {
 			this.id = id;
 			this.exp = exp;
 		}
@@ -138,10 +131,32 @@ public interface Linguagem {
 		}
 	}
 
+	/*
+	   Expressoes
+	 */
+
+	abstract class OpBin<T>  {
+		protected final T esq;
+		protected final T dir;
+
+		OpBin(T esq, T dir) {
+			this.esq = esq;
+			this.dir = dir;
+		}
+	}
+
+	abstract class OpUnaria<T>  {
+		protected final T operando;
+
+		OpUnaria(T operando) {
+			this.operando = operando;
+		}
+	}
+
 	class Inteiro implements Expressao {
 		private final int valor;
 
-		public Inteiro(int valor) {
+		Inteiro(int valor) {
 			this.valor = valor;
 		}
 
@@ -154,7 +169,7 @@ public interface Linguagem {
 	class Id implements Expressao {
 		private final String id;
 
-		public Id(String id) {
+		Id(String id) {
 			this.id = id;
 		}
 
@@ -172,8 +187,8 @@ public interface Linguagem {
 		}
 	}
 
-	class ExpSoma extends ExpBin {
-		public ExpSoma(Expressao esq, Expressao dir) {
+	class ExpSoma extends OpBin<Expressao> implements Expressao {
+		ExpSoma(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
@@ -183,8 +198,8 @@ public interface Linguagem {
 		}
 	}
 
-	class ExpSub extends ExpBin {
-		public ExpSub(Expressao esq, Expressao dir) {
+	class ExpSub extends OpBin<Expressao> implements Expressao {
+		ExpSub(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
@@ -193,9 +208,9 @@ public interface Linguagem {
 			return esq.getValor() - dir.getValor();
 		}
 	}
-	
-	class ExpMult extends ExpBin {
-		public ExpMult(Expressao esq, Expressao dir) {
+
+	class ExpMult extends OpBin<Expressao> implements Expressao{
+		ExpMult(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
@@ -208,7 +223,7 @@ public interface Linguagem {
 	class Booleano implements Bool {
 		private final boolean valor;
 
-		public Booleano(boolean valor) {
+		Booleano(boolean valor) {
 			this.valor = valor;
 		}
 
@@ -218,17 +233,8 @@ public interface Linguagem {
 		}
 	}
 
-	abstract class ExpRel implements Bool {
-		protected final Expressao esq, dir;
-
-		public ExpRel(Expressao esq, Expressao dir) {
-			this.esq = esq;
-			this.dir = dir;
-		}
-	}
-
-	public class ExpIgual extends ExpRel {
-		public ExpIgual(Expressao esq, Expressao dir) {
+	class ExpIgual extends OpBin<Expressao> implements Bool {
+		ExpIgual(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
@@ -236,11 +242,10 @@ public interface Linguagem {
 		public boolean getValor() {
 			return esq.getValor() == dir.getValor();
 		}
-
 	}
 
-	public class ExpMenorIgual extends ExpRel {
-		public ExpMenorIgual(Expressao esq, Expressao dir) {
+	class ExpMenorIgual extends OpBin<Expressao> implements Bool{
+		ExpMenorIgual(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
@@ -250,25 +255,20 @@ public interface Linguagem {
 		}
 	}
 
-	public class NaoLogico implements Bool {
-		private final Bool b;
-
-		public NaoLogico(Bool b) {
-			this.b = b;
+	class NaoLogico extends OpUnaria<Bool> implements Bool{
+		NaoLogico(Bool operando) {
+			super(operando);
 		}
 
 		@Override
 		public boolean getValor() {
-			return !b.getValor();
+			return !operando.getValor();
 		}
 	}
 
-	public class ELogico implements Bool {
-		private final Bool esq, dir;
-
-		public ELogico(Bool esq, Bool dir) {
-			this.esq = esq;
-			this.dir = dir;
+	class ELogico extends OpBin<Bool> implements Bool{
+		ELogico(Bool esq, Bool dir) {
+			super(esq, dir);
 		}
 
 		@Override

@@ -5,7 +5,6 @@ import java.util.List;
 
 import plp.enquanto.Linguagem.*;
 import plp.enquanto.parser.EnquantoBaseListener;
-import plp.enquanto.parser.EnquantoParser;
 import plp.enquanto.parser.EnquantoParser.*;
 
 import static java.lang.Integer.parseInt;
@@ -77,7 +76,7 @@ public class Regras extends EnquantoBaseListener {
 	@Override
 	public void exitSeqComando(SeqComandoContext ctx) {
 		final List<Comando> comandos = new ArrayList<>();
-		for (EnquantoParser.ComandoContext c : ctx.comando()) {
+		for (ComandoContext c : ctx.comando()) {
 			comandos.add(valores.pegue(c));
 		}
 		valores.insira(ctx, comandos);
@@ -101,7 +100,7 @@ public class Regras extends EnquantoBaseListener {
 		final Expressao esq = valores.pegue(ctx.expressao(0));
 		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
-		final ExpBin exp = switch (op) {
+		final Expressao exp = switch (op) {
 			case "*" -> new ExpMult(esq, dir);
 			case "-" -> new ExpSub(esq, dir);
 			default  -> new ExpSoma(esq, dir);
@@ -153,7 +152,7 @@ public class Regras extends EnquantoBaseListener {
 		final Expressao esq = valores.pegue(ctx.expressao(0));
 		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
-		final ExpRel exp = switch (op) {
+		final Bool exp = switch (op) {
 			case "="  -> new ExpIgual(esq, dir);
 			case "<=" -> new ExpMenorIgual(esq, dir);
 			default   -> new ExpIgual(esq, esq);
