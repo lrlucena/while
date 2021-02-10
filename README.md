@@ -5,6 +5,22 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 
 > Implementação da linguagem em Scala (~250 linhas de código): [whilelang](http://github.com/lrlucena/whilelang)
 
+## Sintaxe
+
+A gramática está definida em [Enquanto.g4](https://github.com/lrlucena/While/blob/master/src/plp/enquanto/parser/Enquanto.g4)
+
+### Exemplo
+
+<pre lang="Scala">
+a := leia;
+b := 10;
+se b <= a entao
+  exiba "Menor"
+senao
+  exiba "Maior"
+
+</pre>
+
 ## Projeto de Paradigmas de Linguagens de Programação
 
 ### Tarefas:
