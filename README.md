@@ -14,13 +14,13 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 4. Inclua as relações menor (`<´), maior (`>`), maior ou igual (`>=`) e diferente (`<>`) entre inteiros
 5. Altere a sintaxe para que o `;` ao invés de separar comandos seja usado para finalizar cada comando  
 6. Crie o comando `para ID de expressao ate expressao [passo Int] faca comando`. Exemplo
-<pre>
+<pre lang="scala">
     para i de 1 ate 5 passo 2 faca
       escreva i
 </pre>
 
 7. Altere o comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
-<pre>
+<pre lang="scala">
     se nota >= 6 entao
       exiba "Aprovado"
     senaose nota >= 3 entao
@@ -30,7 +30,7 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 </pre>
 
 8. Crie o comando `escolha` (switch).
-<pre>
+<pre lang="scala">
     x = leia
     escolha x
       caso 1 : exiba "um"
@@ -39,13 +39,13 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
  </pre>
 
 9. Altere a linguagem para permitir atribuições paralelas:
-<pre>
+<pre lang="scala">
     a, b, c := 2, 3, 4
     a, b := b, a
 </pre>
   
 10. Inclua a definição e aplicação de funções
-<pre>
+<pre lang="scala">
   soma = (a, b) => a + b
   
   soma(2,3)
