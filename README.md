@@ -18,7 +18,6 @@ se a <= b entao
   exiba "Menor"
 senao
   exiba "Maior"
-
 </pre>
 
 ## Projeto de Paradigmas de Linguagens de Programação
@@ -52,7 +51,7 @@ senao
       caso 1 : exiba "um"
       caso 2 : exiba "dois"
       outro  : exiba "outro numero"
- </pre>
+</pre>
 
 9. Altere a linguagem para permitir atribuições paralelas:
 <pre lang="scala">
