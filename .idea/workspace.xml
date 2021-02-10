@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66310b7-4f22-440f-8dce-7443160f0128" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/Linguagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/Linguagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/Regras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/Regras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olamundo.while" beforeDir="false" afterPath="$PROJECT_DIR$/olamundo.while" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,7 @@
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -45,7 +47,7 @@
       <recent name="C:\Users\leona\git\While\src\plp\enquanto\parser" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Principal">
+  <component name="RunManager">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="plp.enquanto.Principal" />
       <module name="While" />
