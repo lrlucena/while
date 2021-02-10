@@ -26,7 +26,7 @@ senao
 1. Inclua a operação de divisão de inteiros (`/`)
 2. Inclua a operação de exponenciação de inteiros (`^`)
 3. Inclua as operações `ou` e `xor` entre booleanos
-4. Inclua as relações menor (`<´), maior (`>`), maior ou igual (`>=`) e diferente (`<>`) entre inteiros
+4. Inclua as relações menor (`<`), maior (`>`), maior ou igual (`>=`) e diferente (`<>`) entre inteiros
 5. Altere a sintaxe para que o `;` ao invés de separar comandos seja usado para finalizar cada comando  
 6. Crie o comando `para ID de expressao ate expressao [passo Int] faca comando`. Exemplo
 <pre lang="scala">
