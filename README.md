@@ -14,7 +14,7 @@ A gramática está definida em [Enquanto.g4](https://github.com/lrlucena/While/b
 <pre lang="Scala">
 a := leia;
 b := 10;
-se b <= a entao
+se a <= b entao
   exiba "Menor"
 senao
   exiba "Maior"
