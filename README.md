@@ -7,19 +7,19 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 
 ## Projeto de Paradigmas de Linguagens de Programação
 
-### Altere a linguagem para incluir:
-1. A expressão de divisão de inteiros (`/`)
-2. A expressão de exponenciação de inteiros (`^`)
-3. A expressão `ou` entre booleanos
-4. A expressão `xor` entre booleanos
-5. A relação maior ou igual (`>=`)
-6. A relação diferente (`<>`)
-5. O comando `para ID de expressao ate expressao [passo Int] faca comando`. Exemplo
+### Tarefas:
+1. Inclua a operação de divisão de inteiros (`/`)
+2. Inclua a operação de exponenciação de inteiros (`^`)
+3. Inclua as operações `ou` e `xor` entre booleanos
+4. Inclua as relações menor (`<´), maior (`>`), maior ou igual (`>=`) e diferente (`<>`) entre inteiros
+5. Altere a sintaxe para que o `;` ao invés de separar comandos seja usado para finalizar cada comando  
+6. Crie o comando `para ID de expressao ate expressao [passo Int] faca comando`. Exemplo
 <pre>
     para i de 1 ate 5 passo 2 faca
       escreva i
 </pre>
-8. A alteração do comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
+
+7. Altere o comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
 <pre>
     se nota >= 6 entao
       exiba "Aprovado"
@@ -29,7 +29,7 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
       exiba "Reprovado"
 </pre>
 
-9. O comando `escolha` (switch).
+8. Crie o comando `escolha` (switch).
 <pre>
     x = leia
     escolha x
@@ -38,9 +38,15 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
       outro  : exiba "outro numero"
  </pre>
 
-10. A definição e aplicação de funções
+9. Altere a linguagem para permitir atribuições paralelas:
 <pre>
-  soma(a,b) = a + b ;
+    a, b, c := 2, 3, 4
+    a, b := b, a
+</pre>
+  
+10. Inclua a definição e aplicação de funções
+<pre>
+  soma = (a, b) => a + b
   
   soma(2,3)
 </pre>
