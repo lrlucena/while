@@ -10,6 +10,7 @@ public class Propriedades {
         valores = new ParseTreeProperty<>();
     }
 
+    @SuppressWarnings(value = "unchecked")
     public <T> T pegue(ParseTree node) {
         T valor = (T) valores.get(node);
         valores.removeFrom(node);
