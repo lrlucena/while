@@ -35,7 +35,7 @@ senao
 6. Crie o comando `repita expressao vezes comando`. Exemplo
 <pre lang="scala">
     repita 10 vezes
-      escreva "Funciona"
+      exiba "Funciona"
 </pre>
 7. Altere o comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
 <pre lang="scala">
