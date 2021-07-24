@@ -1,3 +1,6 @@
 /bin/
 .idea/misc.xml
 .idea/workspace.xml
+
+*.interp
+*.tokens
