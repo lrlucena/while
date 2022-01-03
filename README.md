@@ -22,6 +22,18 @@ senao
 
 ## Compilação e Execução
 
+Este projeto usa alguns recursos da versão 14 de Java. Por isso é necessário verificar a versão instalada e, se for necessário, atualizar a versão.
+
+````bash
+$ java -version
+````
+
+Se a versão de Java for anterior à versão 14  então é preciso atualizar a versão instalada. Você pode usar o sdkman (sdkman.org) para instalar a versão mais nova.
+
+````bash
+$ sdk i java
+````
+
 Para compilar use `compilar.bat` (windows) ou `compilar.sh` (linux).
 
 ````bash
