@@ -20,6 +20,21 @@ senao
   exiba "Maior"
 </pre>
 
+## Compilação e Execução
+
+Para compilar use `compilar.bat` (windows) ou `compilar.sh` (linux).
+
+````bash
+$ ./compilar.sh
+````
+O script gera o parser e compila o código Java gerado.
+
+Para executar use `while.bat` (windows) ou `./while` (linux).
+
+````bash
+$ ./while olamundo.while
+````
+
 ## Projeto de Paradigmas de Linguagens de Programação
 
 ### Tarefas:
