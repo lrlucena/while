@@ -11,7 +11,7 @@ A gramática está definida em [Enquanto.g4](https://github.com/lrlucena/While/b
 
 ### Exemplo
 
-<pre lang="Scala">
+<pre lang="portugol">
 a := leia;
 b := 10;
 se a <= b entao
@@ -55,17 +55,17 @@ $ ./while olamundo.while
 3. Inclua as relações menor (`<`), maior (`>`), maior ou igual (`>=`) e diferente (`!=`) entre inteiros
 4. Altere a sintaxe para que o `;` ao invés de separar comandos seja usado para finalizar cada comando  
 5. Crie o comando `para ID em expressao .. expressao faca comando`. Exemplo
-<pre lang="scala">
+<pre lang="portugol">
     para i em 1 .. 5 faca
       escreva i
 </pre>
 6. Crie o comando `repita expressao vezes comando`. Exemplo
-<pre lang="scala">
+<pre lang="portugol">
     repita 10 vezes
       exiba "Funciona"
 </pre>
 7. Altere o comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
-<pre lang="scala">
+<pre lang="portugol">
     se nota >= 6 entao
       exiba "Aprovado"
     senaose nota >= 3 entao
@@ -75,7 +75,7 @@ $ ./while olamundo.while
 </pre>
 
 8. Crie o comando `quando` (switch).
-<pre lang="scala">
+<pre lang="portugol">
     x = leia
     quando x
       1 : exiba "um"
@@ -84,13 +84,13 @@ $ ./while olamundo.while
 </pre>
 
 9. Altere a linguagem para permitir atribuições paralelas:
-<pre lang="scala">
+<pre lang="portugol">
     a, b, c := 2, 3, 4
     a, b := b, a
 </pre>
   
 10. Altere a linguagem para unificar os comandos `exiba` e `escreva`.
-<pre lang="scala">
+<pre lang="portugol">
   exiba "Ola Mundo"
   exiba 2021
 </pre>
