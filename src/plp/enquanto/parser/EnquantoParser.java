@@ -1,4 +1,4 @@
-// Generated from ./src/plp/enquanto/parser/Enquanto.g4 by ANTLR 4.9.2
+// Generated from java-escape by ANTLR 4.11.1
 package plp.enquanto.parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class EnquantoParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.11.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -81,7 +81,7 @@ public class EnquantoParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Enquanto.g4"; }
+	public String getGrammarFileName() { return "java-escape"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -97,6 +97,7 @@ public class EnquantoParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramaContext extends ParserRuleContext {
 		public SeqComandoContext seqComando() {
 			return getRuleContext(SeqComandoContext.class,0);
@@ -136,6 +137,7 @@ public class EnquantoParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SeqComandoContext extends ParserRuleContext {
 		public List<ComandoContext> comando() {
 			return getRuleContexts(ComandoContext.class);
@@ -195,6 +197,7 @@ public class EnquantoParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ComandoContext extends ParserRuleContext {
 		public ComandoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -206,6 +209,7 @@ public class EnquantoParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class AtribuicaoContext extends ComandoContext {
 		public TerminalNode ID() { return getToken(EnquantoParser.ID, 0); }
 		public ExpressaoContext expressao() {
@@ -221,6 +225,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitAtribuicao(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SeContext extends ComandoContext {
 		public BooleanoContext booleano() {
 			return getRuleContext(BooleanoContext.class,0);
@@ -241,6 +246,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitSe(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExibaContext extends ComandoContext {
 		public TerminalNode TEXTO() { return getToken(EnquantoParser.TEXTO, 0); }
 		public ExibaContext(ComandoContext ctx) { copyFrom(ctx); }
@@ -253,6 +259,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitExiba(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class EnquantoContext extends ComandoContext {
 		public BooleanoContext booleano() {
 			return getRuleContext(BooleanoContext.class,0);
@@ -270,6 +277,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitEnquanto(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class BlocoContext extends ComandoContext {
 		public SeqComandoContext seqComando() {
 			return getRuleContext(SeqComandoContext.class,0);
@@ -284,6 +292,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBloco(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class EscrevaContext extends ComandoContext {
 		public ExpressaoContext expressao() {
 			return getRuleContext(ExpressaoContext.class,0);
@@ -298,6 +307,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitEscreva(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SkipContext extends ComandoContext {
 		public SkipContext(ComandoContext ctx) { copyFrom(ctx); }
 		@Override
@@ -416,6 +426,7 @@ public class EnquantoParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressaoContext extends ParserRuleContext {
 		public ExpressaoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -427,6 +438,7 @@ public class EnquantoParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class LeiaContext extends ExpressaoContext {
 		public LeiaContext(ExpressaoContext ctx) { copyFrom(ctx); }
 		@Override
@@ -438,6 +450,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitLeia(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class InteiroContext extends ExpressaoContext {
 		public TerminalNode INT() { return getToken(EnquantoParser.INT, 0); }
 		public InteiroContext(ExpressaoContext ctx) { copyFrom(ctx); }
@@ -450,6 +463,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitInteiro(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class OpBinContext extends ExpressaoContext {
 		public List<ExpressaoContext> expressao() {
 			return getRuleContexts(ExpressaoContext.class);
@@ -467,6 +481,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOpBin(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdContext extends ExpressaoContext {
 		public TerminalNode ID() { return getToken(EnquantoParser.ID, 0); }
 		public IdContext(ExpressaoContext ctx) { copyFrom(ctx); }
@@ -479,6 +494,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitId(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExpParContext extends ExpressaoContext {
 		public ExpressaoContext expressao() {
 			return getRuleContext(ExpressaoContext.class,0);
@@ -621,6 +637,7 @@ public class EnquantoParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class BooleanoContext extends ParserRuleContext {
 		public BooleanoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -632,6 +649,7 @@ public class EnquantoParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class BoolContext extends BooleanoContext {
 		public TerminalNode BOOLEANO() { return getToken(EnquantoParser.BOOLEANO, 0); }
 		public BoolContext(BooleanoContext ctx) { copyFrom(ctx); }
@@ -644,6 +662,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBool(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ELogicoContext extends BooleanoContext {
 		public List<BooleanoContext> booleano() {
 			return getRuleContexts(BooleanoContext.class);
@@ -661,6 +680,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitELogico(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class NaoLogicoContext extends BooleanoContext {
 		public BooleanoContext booleano() {
 			return getRuleContext(BooleanoContext.class,0);
@@ -675,6 +695,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitNaoLogico(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class OpRelContext extends BooleanoContext {
 		public List<ExpressaoContext> expressao() {
 			return getRuleContexts(ExpressaoContext.class);
@@ -692,6 +713,7 @@ public class EnquantoParser extends Parser {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOpRel(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class BoolParContext extends BooleanoContext {
 		public BooleanoContext booleano() {
 			return getRuleContext(BooleanoContext.class,0);
@@ -851,31 +873,64 @@ public class EnquantoParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\36`\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\3\3\3\3\3\7\3\22\n\3\f\3\16\3\25"+
-		"\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
-		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4/\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
-		"\3\5\5\59\n\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5A\n\5\f\5\16\5D\13\5\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6V\n\6\3\6"+
-		"\3\6\3\6\7\6[\n\6\f\6\16\6^\13\6\3\6\2\4\b\n\7\2\4\6\b\n\2\3\3\2\21\22"+
-		"\2k\2\f\3\2\2\2\4\16\3\2\2\2\6.\3\2\2\2\b8\3\2\2\2\nU\3\2\2\2\f\r\5\4"+
-		"\3\2\r\3\3\2\2\2\16\23\5\6\4\2\17\20\7\3\2\2\20\22\5\6\4\2\21\17\3\2\2"+
-		"\2\22\25\3\2\2\2\23\21\3\2\2\2\23\24\3\2\2\2\24\5\3\2\2\2\25\23\3\2\2"+
-		"\2\26\27\7\33\2\2\27\30\7\4\2\2\30/\5\b\5\2\31/\7\5\2\2\32\33\7\6\2\2"+
-		"\33\34\5\n\6\2\34\35\7\7\2\2\35\36\5\6\4\2\36\37\7\b\2\2\37 \5\6\4\2 "+
-		"/\3\2\2\2!\"\7\t\2\2\"#\5\n\6\2#$\7\n\2\2$%\5\6\4\2%/\3\2\2\2&\'\7\13"+
-		"\2\2\'/\7\34\2\2()\7\f\2\2)/\5\b\5\2*+\7\r\2\2+,\5\4\3\2,-\7\16\2\2-/"+
-		"\3\2\2\2.\26\3\2\2\2.\31\3\2\2\2.\32\3\2\2\2.!\3\2\2\2.&\3\2\2\2.(\3\2"+
-		"\2\2.*\3\2\2\2/\7\3\2\2\2\60\61\b\5\1\2\619\7\32\2\2\629\7\17\2\2\639"+
-		"\7\33\2\2\64\65\7\23\2\2\65\66\5\b\5\2\66\67\7\24\2\2\679\3\2\2\28\60"+
-		"\3\2\2\28\62\3\2\2\28\63\3\2\2\28\64\3\2\2\29B\3\2\2\2:;\f\5\2\2;<\7\20"+
-		"\2\2<A\5\b\5\6=>\f\4\2\2>?\t\2\2\2?A\5\b\5\5@:\3\2\2\2@=\3\2\2\2AD\3\2"+
-		"\2\2B@\3\2\2\2BC\3\2\2\2C\t\3\2\2\2DB\3\2\2\2EF\b\6\1\2FV\7\31\2\2GH\5"+
-		"\b\5\2HI\7\25\2\2IJ\5\b\5\2JV\3\2\2\2KL\5\b\5\2LM\7\26\2\2MN\5\b\5\2N"+
-		"V\3\2\2\2OP\7\27\2\2PV\5\n\6\5QR\7\23\2\2RS\5\n\6\2ST\7\24\2\2TV\3\2\2"+
-		"\2UE\3\2\2\2UG\3\2\2\2UK\3\2\2\2UO\3\2\2\2UQ\3\2\2\2V\\\3\2\2\2WX\f\4"+
-		"\2\2XY\7\30\2\2Y[\5\n\6\5ZW\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]\13"+
-		"\3\2\2\2^\\\3\2\2\2\t\23.8@BU\\";
+		"\u0004\u0001\u001c^\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0001"+
+		"\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0005\u0001\u0010"+
+		"\b\u0001\n\u0001\f\u0001\u0013\t\u0001\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0002-\b\u0002\u0001\u0003"+
+		"\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003"+
+		"\u0001\u0003\u0003\u00037\b\u0003\u0001\u0003\u0001\u0003\u0001\u0003"+
+		"\u0001\u0003\u0001\u0003\u0001\u0003\u0005\u0003?\b\u0003\n\u0003\f\u0003"+
+		"B\t\u0003\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0003\u0004"+
+		"T\b\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0005\u0004Y\b\u0004\n\u0004"+
+		"\f\u0004\\\t\u0004\u0001\u0004\u0000\u0002\u0006\b\u0005\u0000\u0002\u0004"+
+		"\u0006\b\u0000\u0001\u0001\u0000\u000f\u0010i\u0000\n\u0001\u0000\u0000"+
+		"\u0000\u0002\f\u0001\u0000\u0000\u0000\u0004,\u0001\u0000\u0000\u0000"+
+		"\u00066\u0001\u0000\u0000\u0000\bS\u0001\u0000\u0000\u0000\n\u000b\u0003"+
+		"\u0002\u0001\u0000\u000b\u0001\u0001\u0000\u0000\u0000\f\u0011\u0003\u0004"+
+		"\u0002\u0000\r\u000e\u0005\u0001\u0000\u0000\u000e\u0010\u0003\u0004\u0002"+
+		"\u0000\u000f\r\u0001\u0000\u0000\u0000\u0010\u0013\u0001\u0000\u0000\u0000"+
+		"\u0011\u000f\u0001\u0000\u0000\u0000\u0011\u0012\u0001\u0000\u0000\u0000"+
+		"\u0012\u0003\u0001\u0000\u0000\u0000\u0013\u0011\u0001\u0000\u0000\u0000"+
+		"\u0014\u0015\u0005\u0019\u0000\u0000\u0015\u0016\u0005\u0002\u0000\u0000"+
+		"\u0016-\u0003\u0006\u0003\u0000\u0017-\u0005\u0003\u0000\u0000\u0018\u0019"+
+		"\u0005\u0004\u0000\u0000\u0019\u001a\u0003\b\u0004\u0000\u001a\u001b\u0005"+
+		"\u0005\u0000\u0000\u001b\u001c\u0003\u0004\u0002\u0000\u001c\u001d\u0005"+
+		"\u0006\u0000\u0000\u001d\u001e\u0003\u0004\u0002\u0000\u001e-\u0001\u0000"+
+		"\u0000\u0000\u001f \u0005\u0007\u0000\u0000 !\u0003\b\u0004\u0000!\"\u0005"+
+		"\b\u0000\u0000\"#\u0003\u0004\u0002\u0000#-\u0001\u0000\u0000\u0000$%"+
+		"\u0005\t\u0000\u0000%-\u0005\u001a\u0000\u0000&\'\u0005\n\u0000\u0000"+
+		"\'-\u0003\u0006\u0003\u0000()\u0005\u000b\u0000\u0000)*\u0003\u0002\u0001"+
+		"\u0000*+\u0005\f\u0000\u0000+-\u0001\u0000\u0000\u0000,\u0014\u0001\u0000"+
+		"\u0000\u0000,\u0017\u0001\u0000\u0000\u0000,\u0018\u0001\u0000\u0000\u0000"+
+		",\u001f\u0001\u0000\u0000\u0000,$\u0001\u0000\u0000\u0000,&\u0001\u0000"+
+		"\u0000\u0000,(\u0001\u0000\u0000\u0000-\u0005\u0001\u0000\u0000\u0000"+
+		"./\u0006\u0003\uffff\uffff\u0000/7\u0005\u0018\u0000\u000007\u0005\r\u0000"+
+		"\u000017\u0005\u0019\u0000\u000023\u0005\u0011\u0000\u000034\u0003\u0006"+
+		"\u0003\u000045\u0005\u0012\u0000\u000057\u0001\u0000\u0000\u00006.\u0001"+
+		"\u0000\u0000\u000060\u0001\u0000\u0000\u000061\u0001\u0000\u0000\u0000"+
+		"62\u0001\u0000\u0000\u00007@\u0001\u0000\u0000\u000089\n\u0003\u0000\u0000"+
+		"9:\u0005\u000e\u0000\u0000:?\u0003\u0006\u0003\u0004;<\n\u0002\u0000\u0000"+
+		"<=\u0007\u0000\u0000\u0000=?\u0003\u0006\u0003\u0003>8\u0001\u0000\u0000"+
+		"\u0000>;\u0001\u0000\u0000\u0000?B\u0001\u0000\u0000\u0000@>\u0001\u0000"+
+		"\u0000\u0000@A\u0001\u0000\u0000\u0000A\u0007\u0001\u0000\u0000\u0000"+
+		"B@\u0001\u0000\u0000\u0000CD\u0006\u0004\uffff\uffff\u0000DT\u0005\u0017"+
+		"\u0000\u0000EF\u0003\u0006\u0003\u0000FG\u0005\u0013\u0000\u0000GH\u0003"+
+		"\u0006\u0003\u0000HT\u0001\u0000\u0000\u0000IJ\u0003\u0006\u0003\u0000"+
+		"JK\u0005\u0014\u0000\u0000KL\u0003\u0006\u0003\u0000LT\u0001\u0000\u0000"+
+		"\u0000MN\u0005\u0015\u0000\u0000NT\u0003\b\u0004\u0003OP\u0005\u0011\u0000"+
+		"\u0000PQ\u0003\b\u0004\u0000QR\u0005\u0012\u0000\u0000RT\u0001\u0000\u0000"+
+		"\u0000SC\u0001\u0000\u0000\u0000SE\u0001\u0000\u0000\u0000SI\u0001\u0000"+
+		"\u0000\u0000SM\u0001\u0000\u0000\u0000SO\u0001\u0000\u0000\u0000TZ\u0001"+
+		"\u0000\u0000\u0000UV\n\u0002\u0000\u0000VW\u0005\u0016\u0000\u0000WY\u0003"+
+		"\b\u0004\u0003XU\u0001\u0000\u0000\u0000Y\\\u0001\u0000\u0000\u0000ZX"+
+		"\u0001\u0000\u0000\u0000Z[\u0001\u0000\u0000\u0000[\t\u0001\u0000\u0000"+
+		"\u0000\\Z\u0001\u0000\u0000\u0000\u0007\u0011,6>@SZ";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b66310b7-4f22-440f-8dce-7443160f0128" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitpod.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.gitpod.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/olamundo.while" beforeDir="false" afterPath="$PROJECT_DIR$/olamundo.while" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/While.iml" beforeDir="false" afterPath="$PROJECT_DIR$/While.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilar.bat" beforeDir="false" afterPath="$PROJECT_DIR$/compilar.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilar.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compilar.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/EnquantoParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/while" beforeDir="false" afterPath="$PROJECT_DIR$/while" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/while.jar" beforeDir="false" afterPath="$PROJECT_DIR$/while.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +39,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1nTZ6U8xjjm8EorCw7Md6OuFpsR" />
   <component name="ProjectViewState">
@@ -36,7 +49,14 @@
   <component name="PropertiesComponent">
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -85,8 +105,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611415866342</updated>
+      <workItem from="1667564338147" duration="883000" />
+      <workItem from="1667567046268" duration="809000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
