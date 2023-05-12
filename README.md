@@ -28,7 +28,7 @@ Este projeto usa alguns recursos da versão 14 de Java. Por isso é necessário 
 $ java -version
 ````
 
-Se a versão de Java for anterior à versão 14  então é preciso atualizar a versão instalada. Você pode usar o sdkman (sdkman.org) para instalar a versão mais nova.
+Caso seja necessário, você pode usar o sdkman (sdkman.org) para instalar a versão mais nova.
 
 ````bash
 $ sdk i java
@@ -52,11 +52,11 @@ $ ./while olamundo.while
 ### Tarefas:
 1. Inclua a operações de divisão (`/`) e de exponenciação de inteiros (`^`)
 2. Inclua as operações `ou` e `xor` entre booleanos
-3. Inclua as relações menor (`<`), maior (`>`), maior ou igual (`>=`) e diferente (`!=`) entre inteiros
+3. Inclua as relações menor (`<`), maior (`>`), maior ou igual (`>=`) e diferente (`<>`) entre inteiros
 4. Altere a sintaxe para que o `;` ao invés de separar comandos seja usado para finalizar cada comando  
-5. Crie o comando `para ID em expressao .. expressao faca comando`. Exemplo
+5. Crie o comando `para ID de expressao ate expressao faca comando`. Exemplo
 <pre lang="portugol">
-    para i em 1 .. 5 faca
+    para i de 1 ate 5 faca
       escreva i
 </pre>
 6. Crie o comando `repita expressao vezes comando`. Exemplo
@@ -64,7 +64,7 @@ $ ./while olamundo.while
     repita 10 vezes
       exiba "Funciona"
 </pre>
-7. Altere o comando `se .. entao .. senao ...` para incluir a cláusula (opcional) `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
+7. Altere o comando `se .. entao .. senao ...` para incluir a cláusula `senaose`. Cada `se` pode ter zero ou mais clausulas `senaose`. Exemplo:
 <pre lang="portugol">
     se nota >= 6 entao
       exiba "Aprovado"
@@ -74,10 +74,10 @@ $ ./while olamundo.while
       exiba "Reprovado"
 </pre>
 
-8. Crie o comando `quando` (switch).
+8. Crie o comando `escolha` (switch).
 <pre lang="portugol">
     x = leia
-    quando x
+    escolha x
       1 : exiba "um"
       2 : exiba "dois"
       _ : exiba "outro numero"
@@ -89,7 +89,7 @@ $ ./while olamundo.while
     a, b := b, a
 </pre>
   
-10. Altere a linguagem para unificar os comandos `exiba` e `escreva`.
+10. Altere a linguagem para que o comando `exiba` passa ser usado com números e com textos.
 <pre lang="portugol">
   exiba "Ola Mundo"
   exiba 2021
