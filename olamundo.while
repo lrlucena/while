@@ -1,2 +1,2 @@
-exiba "Ola Mundo!";
-escreva 2000 + 21
+    para i de 1 ate 5 faca
+      escreva i

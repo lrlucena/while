@@ -102,6 +102,7 @@ public class Regras extends EnquantoBaseListener {
 		final String op = ctx.getChild(1).getText();
 		final Expressao exp = switch (op) {
 			case "*" -> new ExpMult(esq, dir);
+			case "/" -> new ExpDiv(esq, dir);
 			case "-" -> new ExpSub(esq, dir);
 			default  -> new ExpSoma(esq, dir);
 		};
